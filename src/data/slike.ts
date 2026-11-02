@@ -8,8 +8,8 @@ import logo from '../assets/slike/logo-slep-stojanovic.jpg';
 export const slike = {
   bok: { src: bok, alt: 'Šlep vozilo Šlep Stojanović sa brojem telefona 063 55 85 81' },
   automobil: { src: automobil, alt: 'Prevoz automobila na platformi šlep vozila Šlep Stojanović' },
-  karavan: { src: karavan, alt: 'Šlepovanje belog karavana – Šlep Stojanović' },
-  havarija: { src: havarija, alt: 'Šlepovanje neispravnog automobila na platformi' },
+  karavan: { src: karavan, alt: 'Šlepanje belog karavana – Šlep Stojanović' },
+  havarija: { src: havarija, alt: 'Šlepanje neispravnog automobila na platformi' },
   banovci: { src: banovci, alt: 'Šlep vozilo Šlep Stojanović u Starim Banovcima' },
 };
 

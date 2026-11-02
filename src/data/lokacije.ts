@@ -31,7 +31,7 @@ export const lokacije: Lokacija[] = [
     uMestu: 'u Novim Banovcima',
     title: 'Šlep služba Novi Banovci 0–24h | Šlep Stojanović',
     description:
-      'Šlep služba u Novim Banovcima – šlepovanje vozila i pomoć na putu 0–24h. Komšijska šlep služba iz Starih Banovaca: 063 55 85 81.',
+      'Šlep služba u Novim Banovcima – šlepanje vozila i pomoć na putu 0–24h. Komšijska šlep služba iz Starih Banovaca: 063 55 85 81.',
     tekst: [
       'Novi Banovci su odmah do Starih Banovaca, gde nam je sedište – praktično smo komšije. Zato smo prvi izbor kada vam vozilo stane u Novim Banovcima.',
       'Prevozimo vozila do servisa u Banovcima, Pazovi, Batajnici ili Zemunu, ili do adrese koju vi odredite.',
@@ -45,7 +45,7 @@ export const lokacije: Lokacija[] = [
     uMestu: 'u Batajnici',
     title: 'Šlep služba Batajnica 0–24h | Šlep Stojanović',
     description:
-      'Šlep služba Batajnica – šlepovanje vozila i pomoć na putu 0–24h, i na autoputu Beograd–Novi Sad. Pozovite Šlep Stojanović: 063 55 85 81.',
+      'Šlep služba Batajnica – šlepanje vozila i pomoć na putu 0–24h, i na autoputu Beograd–Novi Sad. Pozovite Šlep Stojanović: 063 55 85 81.',
     tekst: [
       'Batajnica je prvo naselje Beograda na putu iz Banovaca, pa nam je ovaj deo grada stalno usput. Dolazimo u Batajnicu, Zemun Polje i industrijsku zonu.',
       'Pomažemo i na delu autoputa Beograd–Novi Sad kod Batajnice, gde se kvarovi često dešavaju u gustom saobraćaju.',
@@ -59,7 +59,7 @@ export const lokacije: Lokacija[] = [
     uMestu: 'u Novoj Pazovi',
     title: 'Šlep služba Nova Pazova 0–24h | Šlep Stojanović',
     description:
-      'Šlep služba Nova Pazova – šlepovanje automobila, kombija i motora, pomoć na putu 0–24h. Šlep Stojanović iz Banovaca: 063 55 85 81.',
+      'Šlep služba Nova Pazova – šlepanje automobila, kombija i motora, pomoć na putu 0–24h. Šlep Stojanović iz Banovaca: 063 55 85 81.',
     tekst: [
       'Nova Pazova je naš najbliži veći grad, a magistralni put i autoput prolaze tik uz nju. Šlepujemo vozila iz samog grada, iz industrijske zone i sa prilaznih puteva.',
       'Vozilo možemo odvesti do servisa u Pazovi, ili dalje – u Beograd, Novi Sad ili bilo gde u Srbiji.',
@@ -87,7 +87,7 @@ export const lokacije: Lokacija[] = [
     uMestu: 'u Inđiji',
     title: 'Šlep služba Inđija 0–24h | Šlep Stojanović',
     description:
-      'Šlep služba Inđija – šlepovanje vozila i pomoć na putu 0–24h, Inđija i autoput prema Novom Sadu. Šlep Stojanović: 063 55 85 81.',
+      'Šlep služba Inđija – šlepanje vozila i pomoć na putu 0–24h, Inđija i autoput prema Novom Sadu. Šlep Stojanović: 063 55 85 81.',
     tekst: [
       'Inđija je na istom autoputu kao i Pazova, pa do vas stižemo direktno autoputem. Radimo u Inđiji i okolnim selima.',
       'Ako vam vozilo stane na autoputu kod Inđije, pozovite nas – prevešćemo ga do servisa u Inđiji, Pazovi, Beogradu ili Novom Sadu.',
@@ -101,7 +101,7 @@ export const lokacije: Lokacija[] = [
     uMestu: 'u Belegišu, Surduku i Slankamenu',
     title: 'Šlep služba Belegiš, Surduk, Slankamen 0–24h | Šlep Stojanović',
     description:
-      'Šlep služba za Belegiš, Surduk, Stari i Novi Slankamen – šlepovanje i pomoć na putu 0–24h. Šlep Stojanović iz Starih Banovaca: 063 55 85 81.',
+      'Šlep služba za Belegiš, Surduk, Stari i Novi Slankamen – šlepanje i pomoć na putu 0–24h. Šlep Stojanović iz Starih Banovaca: 063 55 85 81.',
     tekst: [
       'Podunavska sela uz Dunav – Belegiš, Surduk, Stari Slankamen i Novi Slankamen – nalaze se na putu koji ide iz Starih Banovaca uz reku. Zato do njih dolazimo direktno, bez obilaska kroz Beograd.',
       'Šlepujemo vozila iz sela, sa vikend naselja i sa puteva uz Dunav, i prevozimo ih do servisa u Pazovi, Inđiji ili Beogradu.',
@@ -115,7 +115,7 @@ export const lokacije: Lokacija[] = [
     uMestu: 'u Zemunu',
     title: 'Šlep služba Zemun 0–24h | Šlep Stojanović',
     description:
-      'Šlep služba Zemun – šlepovanje vozila i pomoć na putu 0–24h u Zemunu, Zemun Polju i okolini. Šlep Stojanović: 063 55 85 81.',
+      'Šlep služba Zemun – šlepanje vozila i pomoć na putu 0–24h u Zemunu, Zemun Polju i okolini. Šlep Stojanović: 063 55 85 81.',
     tekst: [
       'Zemun je na našem putu ka Beogradu, preko Batajnice. Radimo u celom Zemunu – od starog jezgra do Zemun Polja, Ugrinovaca i Altine.',
       'Prevozimo vozila do servisa i ovlašćenih zastupnika u Zemunu i na Novom Beogradu.',
@@ -129,7 +129,7 @@ export const lokacije: Lokacija[] = [
     uMestu: 'na Novom Beogradu',
     title: 'Šlep služba Novi Beograd 0–24h | Šlep Stojanović',
     description:
-      'Šlep služba Novi Beograd – šlepovanje automobila i pomoć na putu 0–24h. Šlep Stojanović: 063 55 85 81 (Viber, WhatsApp).',
+      'Šlep služba Novi Beograd – šlepanje automobila i pomoć na putu 0–24h. Šlep Stojanović: 063 55 85 81 (Viber, WhatsApp).',
     tekst: [
       'Na Novom Beogradu radimo u svim blokovima, na bulevarima i na auto-putu kroz grad. Šlepujemo vozila sa ulica, parkinga i iz garaža na otvorenom.',
       'Vozila sa Novog Beograda vozimo do servisa u Beogradu, ali i dalje – po Sremu, Srbiji i Evropi.',
@@ -143,7 +143,7 @@ export const lokacije: Lokacija[] = [
     uMestu: 'u Beogradu',
     title: 'Šlep služba Beograd 0–24h | Šlep Stojanović',
     description:
-      'Šlep služba Beograd – šlepovanje vozila, pomoć na putu i prevoz po Srbiji i Evropi, 0–24h. Šlep Stojanović: 063 55 85 81.',
+      'Šlep služba Beograd – šlepanje vozila, pomoć na putu i prevoz po Srbiji i Evropi, 0–24h. Šlep Stojanović: 063 55 85 81.',
     tekst: [
       'Pored Zemuna, Novog Beograda i Batajnice, dolazimo i u ostale delove Beograda. Pozovite nas i recite gde se nalazite.',
       'Iz Beograda prevozimo vozila i u druge gradove Srbije i u inostranstvo.',

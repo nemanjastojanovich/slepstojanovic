@@ -16,25 +16,25 @@ export type Usluga = {
 
 export const usluge: Usluga[] = [
   {
-    slug: 'slepovanje-vozila',
-    naziv: 'Šlepovanje vozila',
+    slug: 'slepanje-vozila',
+    naziv: 'Šlepanje vozila',
     kratko: 'Automobili, kombiji i motori posle kvara ili udesa – prevozimo ih do servisa, kuće ili otpada.',
-    title: 'Šlepovanje vozila 0–24h | Šlep Stojanović Stari Banovci',
+    title: 'Šlepanje vozila 0–24h | Šlep Stojanović Stari Banovci',
     description:
-      'Šlepovanje automobila, kombija i motora posle kvara ili udesa, 0–24h. Stari Banovci, Pazova, Batajnica, Zemun, Beograd. Pozovite 063 55 85 81.',
-    h1: 'Šlepovanje vozila 0–24h',
+      'Šlepanje automobila, kombija i motora posle kvara ili udesa, 0–24h. Stari Banovci, Pazova, Batajnica, Zemun, Beograd. Pozovite 063 55 85 81.',
+    h1: 'Šlepanje vozila 0–24h',
     uvod:
       'Vozilo vam je stalo, neće da upali ili je oštećeno u udesu? Dolazimo šlep vozilom sa platformom, utovarujemo ga i prevozimo tamo gde vam treba – do servisa, do kuće ili do otpada.',
     sekcije: [
       {
-        naslov: 'Kako izgleda šlepovanje',
+        naslov: 'Kako izgleda šlepanje',
         tekst: [
           'Pozovete nas na 063 55 85 81 i kažete gde se nalazite i šta se desilo sa vozilom. Ako ne znate tačnu adresu, pošaljite lokaciju preko Vibera ili WhatsApp-a.',
           'Vozilo utovarujemo na platformu i pričvršćujemo ga, pa se prevozi bez vožnje na sopstvenim točkovima. Tako se dodatno ne opterećuju menjač ni kočnice.',
         ],
       },
       {
-        naslov: 'Šlepovanje posle udesa',
+        naslov: 'Šlepanje posle udesa',
         tekst: [
           'Prevozimo i havarisana vozila koja ne mogu da se kreću. Vozilo možemo odvesti u servis, na parking ili na adresu koju vi odredite.',
         ],
