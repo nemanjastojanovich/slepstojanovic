@@ -1,0 +1,149 @@
+---
+import { Image } from 'astro:assets';
+import { firma } from '../data/firma';
+import { logoSlika } from '../data/slike';
+import Ikonica from './Ikonica.astro';
+
+const meni = [
+  { naziv: 'Usluge', url: '/#usluge' },
+  { naziv: 'Lokacije', url: '/lokacije' },
+  { naziv: 'Galerija', url: '/galerija' },
+  { naziv: 'O nama', url: '/o-nama' },
+  { naziv: 'Česta pitanja', url: '/cesta-pitanja' },
+  { naziv: 'Kontakt', url: '/kontakt' },
+];
+---
+
+<header class="zaglavlje">
+  <div class="kontejner zaglavlje__red">
+    <a href="/" class="logo" aria-label={`${firma.ime} – početna`}>
+      <Image src={logoSlika} alt={`${firma.ime} logo`} width={120} height={90} loading="eager" />
+      <span class="logo__tekst">
+        <strong>{firma.ime}</strong>
+        <span>{firma.podnaslov} · 0–24h</span>
+      </span>
+    </a>
+
+    <nav class="meni-desktop" aria-label="Glavni meni">
+      {meni.map((s) => <a href={s.url}>{s.naziv}</a>)}
+    </nav>
+
+    <a class="dugme dugme--crveno zaglavlje__tel" href={firma.telefonLink}>
+      <Ikonica ime="telefon" />
+      <span>{firma.telefon}</span>
+    </a>
+
+    <details class="meni-mobilni">
+      <summary aria-label="Otvori meni">
+        <span></span><span></span><span></span>
+      </summary>
+      <nav aria-label="Mobilni meni">
+        {meni.map((s) => <a href={s.url}>{s.naziv}</a>)}
+      </nav>
+    </details>
+  </div>
+</header>
+
+<style>
+  .zaglavlje {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: var(--bela);
+    border-bottom: 1px solid #e6e6e6;
+  }
+  .zaglavlje__red {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    min-height: 72px;
+  }
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: var(--crna);
+    margin-right: auto;
+  }
+  .logo img {
+    width: 64px;
+    height: auto;
+  }
+  .logo__tekst {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.15;
+  }
+  .logo__tekst strong {
+    font-size: 1.05rem;
+    font-weight: 800;
+  }
+  .logo__tekst span {
+    font-size: 0.78rem;
+    color: var(--siva-tekst);
+  }
+  .meni-desktop {
+    display: none;
+    gap: 22px;
+  }
+  .meni-desktop a {
+    color: var(--crna);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+  }
+  .meni-desktop a:hover {
+    color: var(--crvena);
+  }
+  .zaglavlje__tel {
+    display: none;
+    padding: 10px 18px;
+  }
+  .meni-mobilni summary {
+    list-style: none;
+    cursor: pointer;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    padding: 10px;
+  }
+  .meni-mobilni summary::-webkit-details-marker {
+    display: none;
+  }
+  .meni-mobilni summary span {
+    height: 3px;
+    background: var(--crna);
+    border-radius: 2px;
+  }
+  .meni-mobilni nav {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    background: var(--bela);
+    border-bottom: 1px solid #e6e6e6;
+    display: flex;
+    flex-direction: column;
+    padding: 8px 16px 16px;
+  }
+  .meni-mobilni nav a {
+    padding: 12px 0;
+    color: var(--crna);
+    text-decoration: none;
+    font-weight: 600;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  @media (min-width: 1000px) {
+    .meni-desktop,
+    .zaglavlje__tel {
+      display: flex;
+    }
+    .meni-mobilni {
+      display: none;
+    }
+  }
+</style>

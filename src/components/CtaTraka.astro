@@ -1,0 +1,44 @@
+---
+import KontaktDugmad from './KontaktDugmad.astro';
+
+interface Props {
+  naslov?: string;
+  tekst?: string;
+}
+const {
+  naslov = 'Stalo vam je vozilo? Pozovite odmah.',
+  tekst = 'Dostupni smo 0–24h, svakog dana. Lokaciju možete poslati preko Vibera ili WhatsApp-a.',
+} = Astro.props;
+---
+
+<section class="cta">
+  <div class="kontejner cta__red">
+    <div>
+      <h2>{naslov}</h2>
+      <p>{tekst}</p>
+    </div>
+    <KontaktDugmad svetla />
+  </div>
+</section>
+
+<style>
+  .cta {
+    background: linear-gradient(120deg, var(--crvena), var(--tamnocrvena));
+    color: var(--bela);
+    padding-block: 48px;
+  }
+  .cta__red {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .cta h2 {
+    margin-bottom: 8px;
+  }
+  .cta p {
+    margin: 0;
+    opacity: 0.9;
+  }
+</style>

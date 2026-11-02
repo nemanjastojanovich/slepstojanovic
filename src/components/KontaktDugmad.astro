@@ -1,0 +1,17 @@
+---
+import { firma } from '../data/firma';
+import Ikonica from './Ikonica.astro';
+
+interface Props {
+  svetla?: boolean;
+}
+const { svetla = false } = Astro.props;
+---
+
+<div class="dugmad">
+  <a class={`dugme ${svetla ? 'dugme--belo' : 'dugme--crveno'}`} href={firma.telefonLink}>
+    <Ikonica ime="telefon" /> Pozovi {firma.telefon}
+  </a>
+  <a class="dugme dugme--viber" href={firma.viberLink}><Ikonica ime="viber" /> Viber</a>
+  <a class="dugme dugme--whatsapp" href={firma.whatsappLink}><Ikonica ime="whatsapp" /> WhatsApp</a>
+</div>

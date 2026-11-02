@@ -1,0 +1,40 @@
+---
+import type { Pitanje } from '../data/usluge';
+
+interface Props {
+  pitanja: Pitanje[];
+  naslov?: string;
+}
+const { pitanja, naslov = 'Česta pitanja' } = Astro.props;
+---
+
+<div class="faq">
+  {naslov && <h2 class="naslov-sekcije">{naslov}</h2>}
+  {
+    pitanja.map((p) => (
+      <details>
+        <summary>{p.pitanje}</summary>
+        <p>{p.odgovor}</p>
+      </details>
+    ))
+  }
+</div>
+
+<style>
+  .faq details {
+    background: var(--bela);
+    border-radius: var(--radius);
+    box-shadow: var(--senka);
+    margin-bottom: 12px;
+    padding: 4px 20px;
+  }
+  .faq summary {
+    cursor: pointer;
+    font-weight: 700;
+    padding: 14px 0;
+    list-style-position: outside;
+  }
+  .faq details p {
+    color: var(--siva-tekst);
+  }
+</style>

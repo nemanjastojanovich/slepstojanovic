@@ -1,0 +1,56 @@
+---
+import { Image } from 'astro:assets';
+import Osnovni from '../layouts/Osnovni.astro';
+import HeroMali from '../components/HeroMali.astro';
+import CtaTraka from '../components/CtaTraka.astro';
+import { galerija } from '../data/slike';
+
+const mrvice = [
+  { naziv: 'Početna', url: '/' },
+  { naziv: 'Galerija', url: '/galerija' },
+];
+---
+
+<Osnovni
+  title="Galerija – šlep vozilo i intervencije | Šlep Stojanović"
+  description="Fotografije šlep vozila i intervencija Šlep Stojanović iz Starih Banovaca. Šlep služba i pomoć na putu 0–24h: 063 55 85 81."
+  mrvice={mrvice}
+>
+  <HeroMali naslov="Galerija" podnaslov="Naše šlep vozilo i intervencije sa terena." mrvice={mrvice} dugmad={false} />
+
+  <section class="sekcija">
+    <div class="kontejner galerija">
+      {
+        galerija.map((s) => (
+          <figure>
+            <Image src={s.src} alt={s.alt} widths={[400, 800]} sizes="(min-width: 860px) 33vw, 100vw" class="zaobljena" />
+            <figcaption>{s.alt}</figcaption>
+          </figure>
+        ))
+      }
+    </div>
+  </section>
+
+  <CtaTraka />
+</Osnovni>
+
+<style>
+  .galerija {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
+  figure {
+    margin: 0;
+  }
+  figure :global(img) {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+  }
+  figcaption {
+    font-size: 0.85rem;
+    color: var(--siva-tekst);
+    margin-top: 8px;
+  }
+</style>

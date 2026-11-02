@@ -1,0 +1,139 @@
+---
+import { firma } from '../data/firma';
+import { usluge } from '../data/usluge';
+import { lokacije } from '../data/lokacije';
+import Ikonica from './Ikonica.astro';
+
+const godina = new Date().getFullYear();
+---
+
+<footer class="futer">
+  <div class="kontejner futer__mreza">
+    <div>
+      <p class="futer__ime">{firma.ime}</p>
+      <p>Šlep služba i pomoć na putu 0–24h. Srem, Beograd, Srbija i Evropa.</p>
+      <ul class="futer__kontakt">
+        <li><Ikonica ime="telefon" /><a href={firma.telefonLink}>{firma.telefon}</a> (Viber, WhatsApp)</li>
+        <li><Ikonica ime="mejl" /><a href={`mailto:${firma.email}`}>{firma.email}</a></li>
+        <li><Ikonica ime="lokacija" />{firma.adresa.ulica}, {firma.adresa.postanskiBroj} {firma.adresa.mesto}</li>
+        <li><Ikonica ime="sat" />Radno vreme: {firma.radnoVreme}</li>
+      </ul>
+      <div class="futer__mreze">
+        <a href={firma.mreze.instagram} aria-label="Instagram" rel="noopener" target="_blank"><Ikonica ime="instagram" /></a>
+        <a href={firma.mreze.facebook} aria-label="Facebook" rel="noopener" target="_blank"><Ikonica ime="facebook" /></a>
+        <a href={firma.mreze.googleMape} aria-label="Google mape" rel="noopener" target="_blank"><Ikonica ime="mapa" /></a>
+      </div>
+    </div>
+
+    <div>
+      <p class="futer__naslov">Usluge</p>
+      <ul>
+        {usluge.map((u) => <li><a href={`/usluge/${u.slug}`}>{u.naziv}</a></li>)}
+      </ul>
+    </div>
+
+    <div>
+      <p class="futer__naslov">Lokacije</p>
+      <ul>
+        {lokacije.map((l) => <li><a href={`/lokacije/${l.slug}`}>Šlep {l.mesto}</a></li>)}
+      </ul>
+    </div>
+
+    <div>
+      <p class="futer__naslov">Informacije</p>
+      <ul>
+        <li><a href="/o-nama">O nama</a></li>
+        <li><a href="/galerija">Galerija</a></li>
+        <li><a href="/cesta-pitanja">Česta pitanja</a></li>
+        <li><a href="/kontakt">Kontakt</a></li>
+        <li><a href="/politika-privatnosti">Politika privatnosti</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="kontejner futer__pravno">
+    <p>
+      © {godina} {firma.poslovnoIme}, {firma.adresa.ulica}, {firma.adresa.postanskiBroj} {firma.adresa.mesto},
+      opština {firma.adresa.opstina} · MB {firma.maticniBroj} · PIB {firma.pib}
+    </p>
+  </div>
+</footer>
+
+<style>
+  .futer {
+    background: var(--crna);
+    color: rgb(255 255 255 / 0.8);
+    padding-top: 56px;
+    font-size: 0.95rem;
+  }
+  .futer a {
+    color: var(--bela);
+    text-decoration: none;
+  }
+  .futer a:hover {
+    color: #ff6b74;
+  }
+  .futer__mreza {
+    display: grid;
+    gap: 32px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+  .futer__ime {
+    color: var(--bela);
+    font-weight: 800;
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+  }
+  .futer__naslov {
+    color: var(--bela);
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+  .futer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .futer li {
+    margin-bottom: 8px;
+  }
+  .futer__kontakt li {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .futer__kontakt svg {
+    width: 18px;
+    height: 18px;
+    color: var(--crvena);
+    flex: none;
+  }
+  .futer__mreze {
+    display: flex;
+    gap: 12px;
+    margin-top: 16px;
+  }
+  .futer__mreze a {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: rgb(255 255 255 / 0.1);
+    display: grid;
+    place-items: center;
+  }
+  .futer__mreze svg {
+    width: 20px;
+    height: 20px;
+  }
+  .futer__pravno {
+    border-top: 1px solid rgb(255 255 255 / 0.12);
+    margin-top: 40px;
+    padding-block: 20px;
+    font-size: 0.8rem;
+    color: rgb(255 255 255 / 0.6);
+  }
+  .futer__pravno p {
+    margin: 0;
+  }
+</style>

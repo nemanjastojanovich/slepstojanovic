@@ -1,0 +1,29 @@
+---
+import type { Mrvica } from '../data/schema';
+import KontaktDugmad from './KontaktDugmad.astro';
+
+interface Props {
+  naslov: string;
+  podnaslov?: string;
+  mrvice: Mrvica[];
+  dugmad?: boolean;
+}
+const { naslov, podnaslov, mrvice, dugmad = true } = Astro.props;
+---
+
+<section class="hero-mali">
+  <div class="kontejner">
+    <nav class="mrvice" aria-label="Putanja">
+      <ol>
+        {
+          mrvice.map((m, i) =>
+            i === mrvice.length - 1 ? <li aria-current="page">{m.naziv}</li> : <li><a href={m.url}>{m.naziv}</a></li>
+          )
+        }
+      </ol>
+    </nav>
+    <h1>{naslov}</h1>
+    {podnaslov && <p class="podnaslov">{podnaslov}</p>}
+    {dugmad && <KontaktDugmad svetla />}
+  </div>
+</section>

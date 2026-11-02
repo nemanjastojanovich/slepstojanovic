@@ -1,0 +1,80 @@
+---
+import Osnovni from '../../layouts/Osnovni.astro';
+import HeroMali from '../../components/HeroMali.astro';
+import CtaTraka from '../../components/CtaTraka.astro';
+import { lokacije } from '../../data/lokacije';
+import { firma } from '../../data/firma';
+import { schemaFirma } from '../../data/schema';
+
+const grupe = [
+  { kljuc: 'Srem', naslov: 'Srem – opština Stara Pazova i Inđija' },
+  { kljuc: 'Beograd', naslov: 'Beograd' },
+  { kljuc: 'Autoput', naslov: 'Autoput' },
+] as const;
+const mrvice = [
+  { naziv: 'Početna', url: '/' },
+  { naziv: 'Lokacije', url: '/lokacije' },
+];
+---
+
+<Osnovni
+  title="Lokacije – šlep služba u Sremu i Beogradu | Šlep Stojanović"
+  description="Šlep služba za Stare i Nove Banovce, Pazovu, Inđiju, Belegiš, Surduk, Slankamen, Batajnicu, Zemun, Novi Beograd i Beograd. 0–24h: 063 55 85 81."
+  mrvice={mrvice}
+  schema={[schemaFirma()]}
+>
+  <HeroMali
+    naslov="Gde radimo"
+    podnaslov="Iz Starih Banovaca pokrivamo celu okolinu Banovaca i Beograd. Vozila prevozimo i po celoj Srbiji i Evropi."
+    mrvice={mrvice}
+  />
+
+  <section class="sekcija">
+    <div class="kontejner">
+      {
+        grupe.map((g) => (
+          <div class="grupa">
+            <h2 class="naslov-sekcije">{g.naslov}</h2>
+            <div class="mreza">
+              {lokacije
+                .filter((l) => l.grupa === g.kljuc)
+                .map((l) => (
+                  <article class="kartica">
+                    <h3>Šlep {l.mesto}</h3>
+                    <p>{l.tekst[0]}</p>
+                    <a class="vise" href={`/lokacije/${l.slug}`}>Više o šlepu {l.uMestu} →</a>
+                  </article>
+                ))}
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="sekcija sekcija--siva">
+    <div class="kontejner">
+      <h2 class="naslov-sekcije">Mapa</h2>
+      <iframe
+        class="mapa"
+        title="Mapa – Šlep Stojanović, Stari Banovci"
+        src={`https://maps.google.com/maps?q=${firma.geo.lat},${firma.geo.lng}&z=10&output=embed`}
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </section>
+
+  <CtaTraka />
+</Osnovni>
+
+<style>
+  .grupa + .grupa {
+    margin-top: 48px;
+  }
+  .mapa {
+    width: 100%;
+    height: 420px;
+    border: 0;
+    border-radius: var(--radius);
+  }
+</style>

@@ -1,0 +1,68 @@
+---
+// Traka sa dugmadima koja je uvek vidljiva na dnu ekrana na mobilnom.
+import { firma } from '../data/firma';
+import Ikonica from './Ikonica.astro';
+---
+
+<div class="poziv-traka" role="region" aria-label="Brzi kontakt">
+  <a class="poziv-traka__pozovi" href={firma.telefonLink}>
+    <Ikonica ime="telefon" /> Pozovi {firma.telefon}
+  </a>
+  <a class="poziv-traka__ikona viber" href={firma.viberLink} aria-label="Viber">
+    <Ikonica ime="viber" />
+  </a>
+  <a class="poziv-traka__ikona whatsapp" href={firma.whatsappLink} aria-label="WhatsApp">
+    <Ikonica ime="whatsapp" />
+  </a>
+</div>
+
+<style>
+  .poziv-traka {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 60;
+    display: flex;
+    gap: 8px;
+    padding: 10px 12px calc(10px + env(safe-area-inset-bottom));
+    background: var(--crna);
+    box-shadow: 0 -4px 16px rgb(0 0 0 / 0.2);
+  }
+  .poziv-traka a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border-radius: 999px;
+    min-height: 50px;
+    font-weight: 700;
+    text-decoration: none;
+  }
+  .poziv-traka svg {
+    width: 22px;
+    height: 22px;
+  }
+  .poziv-traka__pozovi {
+    flex: 1;
+    background: var(--crvena);
+    color: var(--bela);
+    font-size: 1.05rem;
+  }
+  .poziv-traka__ikona {
+    width: 50px;
+    color: var(--bela);
+  }
+  .viber {
+    background: #7360f2;
+  }
+  .whatsapp {
+    background: #25d366;
+    color: var(--crna) !important;
+  }
+  @media (min-width: 860px) {
+    .poziv-traka {
+      display: none;
+    }
+  }
+</style>

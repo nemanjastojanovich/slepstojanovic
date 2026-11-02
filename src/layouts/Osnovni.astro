@@ -1,0 +1,46 @@
+---
+import '@fontsource/poppins/400.css';
+import '@fontsource/poppins/600.css';
+import '@fontsource/poppins/700.css';
+import '@fontsource/poppins/800.css';
+import '../styles/global.css';
+import Seo from '../components/Seo.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import PozoviDugme from '../components/PozoviDugme.astro';
+import { schemaMrvice, type Mrvica } from '../data/schema';
+
+interface Props {
+  title: string;
+  description: string;
+  slika?: string;
+  schema?: object[];
+  mrvice?: Mrvica[];
+  noindex?: boolean;
+}
+
+const { title, description, slika, schema = [], mrvice, noindex } = Astro.props;
+const sveSheme = mrvice && mrvice.length > 1 ? [...schema, schemaMrvice(mrvice)] : schema;
+---
+
+<!doctype html>
+<html lang="sr-Latn">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#d3121e" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <Seo title={title} description={description} slika={slika} schema={sveSheme} noindex={noindex} />
+  </head>
+  <body>
+    <a href="#sadrzaj" class="skriveno">Preskoči na sadržaj</a>
+    <Header />
+    <main id="sadrzaj">
+      <slot />
+    </main>
+    <Footer />
+    <PozoviDugme />
+  </body>
+</html>

@@ -1,0 +1,40 @@
+---
+import Osnovni from '../layouts/Osnovni.astro';
+import HeroMali from '../components/HeroMali.astro';
+import { firma } from '../data/firma';
+
+const mrvice = [
+  { naziv: 'Početna', url: '/' },
+  { naziv: 'Politika privatnosti', url: '/politika-privatnosti' },
+];
+---
+
+<Osnovni
+  title="Politika privatnosti | Šlep Stojanović"
+  description="Politika privatnosti sajta slepstojanovic.rs – koje podatke prikupljamo i kako ih koristimo."
+  mrvice={mrvice}
+>
+  <HeroMali naslov="Politika privatnosti" mrvice={mrvice} dugmad={false} />
+  <section class="sekcija">
+    <div class="kontejner" style="max-width:820px">
+      <!-- TODO: proveriti tekst pre objave; dopuniti ako se uvede analitika sa kolačićima ili kontakt forma. -->
+      <p>Rukovalac podacima: {firma.poslovnoIme}, {firma.adresa.ulica}, {firma.adresa.postanskiBroj} {firma.adresa.mesto}, MB {firma.maticniBroj}, PIB {firma.pib}, email {firma.email}.</p>
+      <h2>Koje podatke prikupljamo</h2>
+      <p>
+        Sajt ne koristi kontakt formu ni kolačiće za praćenje. Kada nas pozovete ili nam pišete preko telefona, Vibera,
+        WhatsApp-a ili emaila, vaše podatke (ime, broj telefona, lokaciju, podatke o vozilu) koristimo samo da bismo
+        pružili uslugu koju ste tražili.
+      </p>
+      <h2>Mape i spoljni servisi</h2>
+      <p>
+        Na sajtu je prikazana Google mapa. Prilikom njenog učitavanja Google može prikupljati podatke u skladu sa svojom
+        politikom privatnosti.
+      </p>
+      <h2>Vaša prava</h2>
+      <p>
+        U skladu sa Zakonom o zaštiti podataka o ličnosti, možete tražiti uvid, ispravku ili brisanje svojih podataka
+        slanjem emaila na {firma.email}.
+      </p>
+    </div>
+  </section>
+</Osnovni>

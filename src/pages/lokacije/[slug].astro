@@ -1,0 +1,59 @@
+---
+import Osnovni from '../../layouts/Osnovni.astro';
+import HeroMali from '../../components/HeroMali.astro';
+import CtaTraka from '../../components/CtaTraka.astro';
+import { lokacije, nadjiLokaciju, type Lokacija } from '../../data/lokacije';
+import { usluge } from '../../data/usluge';
+import { schemaFirma } from '../../data/schema';
+
+export function getStaticPaths() {
+  return lokacije.map((l) => ({ params: { slug: l.slug }, props: { lokacija: l } }));
+}
+
+interface Props {
+  lokacija: Lokacija;
+}
+
+const { lokacija } = Astro.props;
+const naAutoputu = lokacija.grupa === 'Autoput';
+const h1 = naAutoputu ? 'Šlep i pomoć na autoputu Beograd–Novi Sad 0–24h' : `Šlep služba ${lokacija.mesto} 0–24h`;
+const okolina = lokacija.okolina
+  .map((m) => nadjiLokaciju(m))
+  .filter((l): l is Lokacija => Boolean(l) && l?.slug !== lokacija.slug);
+const mrvice = [
+  { naziv: 'Početna', url: '/' },
+  { naziv: 'Lokacije', url: '/lokacije' },
+  { naziv: lokacija.mesto, url: `/lokacije/${lokacija.slug}` },
+];
+---
+
+<Osnovni title={lokacija.title} description={lokacija.description} mrvice={mrvice} schema={[schemaFirma()]}>
+  <HeroMali
+    naslov={h1}
+    podnaslov={`Šlepovanje vozila i pomoć na putu ${lokacija.uMestu} – danju i noću, svakog dana.`}
+    mrvice={mrvice}
+  />
+
+  <section class="sekcija">
+    <div class="kontejner dve-kolone">
+      <div>
+        <h2>{naAutoputu ? 'Kvar na autoputu?' : `Šlep ${lokacija.uMestu}`}</h2>
+        {lokacija.tekst.map((t) => <p>{t}</p>)}
+
+        <h2>Usluge {lokacija.uMestu}</h2>
+        <ul class="lista-tacke">
+          {usluge.map((u) => <li><a href={`/usluge/${u.slug}`}>{u.naziv}</a> – {u.kratko}</li>)}
+        </ul>
+      </div>
+      <aside class="kartica">
+        <h3>Okolna mesta</h3>
+        <ul class="lista-tacke">
+          {okolina.map((l) => <li><a href={`/lokacije/${l.slug}`}>Šlep {l.mesto}</a></li>)}
+        </ul>
+        <p><a href="/lokacije">Sve lokacije →</a></p>
+      </aside>
+    </div>
+  </section>
+
+  <CtaTraka naslov={`Treba vam šlep ${lokacija.uMestu}?`} />
+</Osnovni>

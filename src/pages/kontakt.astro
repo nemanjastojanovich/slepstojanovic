@@ -1,0 +1,90 @@
+---
+import Osnovni from '../layouts/Osnovni.astro';
+import HeroMali from '../components/HeroMali.astro';
+import KontaktDugmad from '../components/KontaktDugmad.astro';
+import Ikonica from '../components/Ikonica.astro';
+import { firma } from '../data/firma';
+import { schemaFirma } from '../data/schema';
+
+const mrvice = [
+  { naziv: 'Početna', url: '/' },
+  { naziv: 'Kontakt', url: '/kontakt' },
+];
+---
+
+<Osnovni
+  title="Kontakt – šlep služba 0–24h, 063 55 85 81 | Šlep Stojanović"
+  description="Pozovite Šlep Stojanović na 063 55 85 81 (Viber, WhatsApp) – 0–24h, svakog dana. Milana Bolanovića 31, Stari Banovci."
+  mrvice={mrvice}
+  schema={[schemaFirma()]}
+>
+  <HeroMali naslov="Kontakt" podnaslov="Najbrže nas dobijate telefonom – 0–24h, svakog dana." mrvice={mrvice} dugmad={false} />
+
+  <section class="sekcija">
+    <div class="kontejner dve-kolone">
+      <div>
+        <h2>Pozovite ili pišite</h2>
+        <p class="telefon"><a href={firma.telefonLink}>{firma.telefon}</a></p>
+        <KontaktDugmad />
+        <ul class="podaci">
+          <li><Ikonica ime="sat" /> {firma.radnoVreme}</li>
+          <li><Ikonica ime="mejl" /> <a href={`mailto:${firma.email}`}>{firma.email}</a></li>
+          <li><Ikonica ime="lokacija" /> {firma.adresa.ulica}, {firma.adresa.postanskiBroj} {firma.adresa.mesto}</li>
+          <li><Ikonica ime="instagram" /> <a href={firma.mreze.instagram} rel="noopener" target="_blank">Instagram</a></li>
+          <li><Ikonica ime="facebook" /> <a href={firma.mreze.facebook} rel="noopener" target="_blank">Facebook</a></li>
+          <li><Ikonica ime="mapa" /> <a href={firma.mreze.googleMape} rel="noopener" target="_blank">Google mape</a></li>
+        </ul>
+        <p class="savet">
+          Savet: preko Vibera ili WhatsApp-a pošaljite svoju lokaciju i sliku vozila – tako se najbrže dogovaramo.
+        </p>
+      </div>
+      <iframe
+        class="mapa"
+        title="Mapa – Šlep Stojanović, Stari Banovci"
+        src={`https://maps.google.com/maps?q=${firma.geo.lat},${firma.geo.lng}&z=13&output=embed`}
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </section>
+</Osnovni>
+
+<style>
+  .telefon {
+    font-size: clamp(2rem, 6vw, 2.8rem);
+    font-weight: 800;
+    margin-bottom: 16px;
+  }
+  .telefon a {
+    color: var(--crvena);
+    text-decoration: none;
+  }
+  .podaci {
+    list-style: none;
+    padding: 0;
+    margin: 28px 0;
+  }
+  .podaci li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+  }
+  .podaci :global(svg) {
+    width: 20px;
+    height: 20px;
+    color: var(--crvena);
+  }
+  .savet {
+    background: var(--siva);
+    border-left: 4px solid var(--crvena);
+    padding: 14px 18px;
+    border-radius: 8px;
+  }
+  .mapa {
+    width: 100%;
+    min-height: 380px;
+    border: 0;
+    border-radius: var(--radius);
+    box-shadow: var(--senka);
+  }
+</style>

@@ -1,0 +1,54 @@
+---
+import { Image } from 'astro:assets';
+import Osnovni from '../layouts/Osnovni.astro';
+import HeroMali from '../components/HeroMali.astro';
+import CtaTraka from '../components/CtaTraka.astro';
+import { firma } from '../data/firma';
+import { slike } from '../data/slike';
+import { schemaFirma } from '../data/schema';
+
+const mrvice = [
+  { naziv: 'Početna', url: '/' },
+  { naziv: 'O nama', url: '/o-nama' },
+];
+---
+
+<Osnovni
+  title="O nama – Šlep Stojanović, Stari Banovci"
+  description="Šlep Stojanović je lokalna šlep služba iz Starih Banovaca. Šlepovanje vozila, pomoć na putu 0–24h i prevoz po Srbiji i Evropi."
+  mrvice={mrvice}
+  schema={[schemaFirma()]}
+>
+  <HeroMali naslov="O nama" podnaslov="Lokalna šlep služba iz Starih Banovaca." mrvice={mrvice} />
+
+  <section class="sekcija">
+    <div class="kontejner dve-kolone">
+      <div>
+        <!-- TODO: Nemanja – ovde dopiši svoju priču (kako si počeo, iskustvo, zašto ljudi zovu baš tebe). -->
+        <h2>Šlep Stojanović</h2>
+        <p>
+          Šlep Stojanović je preduzetnička radnja iz Starih Banovaca, registrovana u Agenciji za privredne registre
+          2026. godine. Vlasnik je Nemanja Stojanović.
+        </p>
+        <p>
+          Bavimo se šlepovanjem vozila, pomoći na putu 0–24h, transportom tereta i mehanizacije i prevozom vozila po
+          Srbiji i Evropi. Sedište nam je u Starim Banovcima, pa smo brzo na putu prema Pazovi, Batajnici, Zemunu i
+          autoputu Beograd–Novi Sad.
+        </p>
+
+        <h2>Podaci o firmi</h2>
+        <ul class="lista-tacke">
+          <li>Poslovno ime: {firma.poslovnoIme}</li>
+          <li>Sedište: {firma.adresa.ulica}, {firma.adresa.postanskiBroj} {firma.adresa.mesto}, opština {firma.adresa.opstina}</li>
+          <li>Matični broj: {firma.maticniBroj}</li>
+          <li>PIB: {firma.pib}</li>
+          <li>Telefon: <a href={firma.telefonLink}>{firma.telefon}</a></li>
+          <li>Email: <a href={`mailto:${firma.email}`}>{firma.email}</a></li>
+        </ul>
+      </div>
+      <Image src={slike.bok.src} alt={slike.bok.alt} widths={[400, 700]} sizes="(min-width: 860px) 40vw, 100vw" class="zaobljena" />
+    </div>
+  </section>
+
+  <CtaTraka />
+</Osnovni>

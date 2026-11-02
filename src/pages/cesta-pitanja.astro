@@ -1,0 +1,30 @@
+---
+import Osnovni from '../layouts/Osnovni.astro';
+import HeroMali from '../components/HeroMali.astro';
+import CtaTraka from '../components/CtaTraka.astro';
+import Faq from '../components/Faq.astro';
+import { pitanjaOpsta } from '../data/pitanja';
+import { usluge } from '../data/usluge';
+import { schemaPitanja } from '../data/schema';
+
+const sva = [...pitanjaOpsta, ...usluge.flatMap((u) => u.pitanja)];
+const mrvice = [
+  { naziv: 'Početna', url: '/' },
+  { naziv: 'Česta pitanja', url: '/cesta-pitanja' },
+];
+---
+
+<Osnovni
+  title="Česta pitanja o šlep službi | Šlep Stojanović"
+  description="Odgovori na najčešća pitanja: radno vreme 0–24h, koja mesta pokrivamo, šta prevozimo, prevoz iz inostranstva. Šlep Stojanović: 063 55 85 81."
+  mrvice={mrvice}
+  schema={[schemaPitanja(sva)]}
+>
+  <HeroMali naslov="Česta pitanja" mrvice={mrvice} />
+  <section class="sekcija sekcija--siva">
+    <div class="kontejner" style="max-width:820px">
+      <Faq pitanja={sva} naslov="" />
+    </div>
+  </section>
+  <CtaTraka />
+</Osnovni>
