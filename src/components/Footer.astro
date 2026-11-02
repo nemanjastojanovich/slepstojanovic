@@ -4,7 +4,6 @@ import { usluge } from '../data/usluge';
 import { lokacije } from '../data/lokacije';
 import Ikonica from './Ikonica.astro';
 
-const godina = new Date().getFullYear();
 ---
 
 <footer class="futer">
@@ -53,7 +52,7 @@ const godina = new Date().getFullYear();
 
   <div class="kontejner futer__pravno">
     <p>
-      © {godina} {firma.poslovnoIme}, {firma.adresa.ulica}, {firma.adresa.postanskiBroj} {firma.adresa.mesto},
+      © {firma.poslovnoIme}, {firma.adresa.ulica}, {firma.adresa.postanskiBroj} {firma.adresa.mesto},
       opština {firma.adresa.opstina} · MB {firma.maticniBroj} · PIB {firma.pib}
     </p>
   </div>
