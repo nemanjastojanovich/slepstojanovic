@@ -59,10 +59,7 @@ const mrvice = [
           <h3>Gde radimo</h3>
           <p>
             {lokacije.map((l, i) => (
-              <>
-                <a href={`/lokacije/${l.slug}`}>{l.mesto}</a>
-                {i < lokacije.length - 1 ? ', ' : ''}
-              </>
+              <><a href={`/lokacije/${l.slug}`}>{l.mesto}</a>{i < lokacije.length - 1 ? ', ' : ''}</>
             ))}
           </p>
         </div>

@@ -141,6 +141,22 @@ const grupe = ['Srem', 'Beograd', 'Autoput'] as const;
     </div>
   </section>
 
+  <section class="sekcija recenzije">
+    <div class="kontejner recenzije__red">
+      <div>
+        <h2 class="naslov-sekcije">Šta kažu naši klijenti</h2>
+        <p class="podnaslov">
+          Pročitajte utiske klijenata na našem Google profilu. Ako ste već koristili našu uslugu, biće nam drago da
+          ostavite recenziju – tako i drugi vozači lakše nađu pouzdanu šlep službu.
+        </p>
+      </div>
+      <div class="dugmad">
+        <a class="dugme dugme--obrub" href={firma.mreze.googleMape} rel="noopener" target="_blank">★ Pogledajte recenzije</a>
+        <a class="dugme dugme--crveno" href={firma.mreze.googleRecenzija} rel="noopener" target="_blank">Ostavite recenziju</a>
+      </div>
+    </div>
+  </section>
+
   <section class="sekcija sekcija--siva">
     <div class="kontejner" style="max-width:820px">
       <Faq pitanja={pitanjaOpsta} />
@@ -152,6 +168,16 @@ const grupe = ['Srem', 'Beograd', 'Autoput'] as const;
 </Osnovni>
 
 <style>
+  .recenzije__red {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .recenzije__red .podnaslov {
+    margin: 0;
+  }
   .hero {
     background: linear-gradient(120deg, var(--tamnocrvena) 0%, #2a0508 70%);
     color: var(--bela);

@@ -24,6 +24,7 @@ export const firma = {
     instagram: 'https://www.instagram.com/slep_stojanovic_banovci/',
     facebook: 'https://www.facebook.com/profile.php?id=61595969494710',
     googleMape: 'https://maps.app.goo.gl/jqt9Lnk99i9VzrLC9',
+    googleRecenzija: 'https://g.page/r/Cb0a8SHt8nf8EBM/review',
   },
   sajt: 'https://slepstojanovic.rs',
 };
