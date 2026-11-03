@@ -18,7 +18,7 @@ export const usluge: Usluga[] = [
   {
     slug: 'slepanje-vozila',
     naziv: 'Šlepanje vozila',
-    kratko: 'Automobili, kombiji i motori posle kvara ili udesa – prevozimo ih do servisa, kuće ili otpada.',
+    kratko: 'Automobili, kombiji, motori i oldtajmeri posle kvara ili udesa – prevozimo ih do servisa, kuće ili otpada.',
     title: 'Šlepanje vozila 0–24h | Šlep Stojanović Stari Banovci',
     description:
       'Šlepanje automobila, kombija i motora posle kvara ili udesa, 0–24h. Stari Banovci, Pazova, Batajnica, Zemun, Beograd. Pozovite 063 55 85 81.',
@@ -48,6 +48,7 @@ export const usluge: Usluga[] = [
         'Motocikle i skutere',
         'Neispravna i havarisana vozila',
         'Neregistrovana vozila',
+        'Oldtajmere i vozila koja ne smeju da se vuku',
         'Vozila do servisa ili na tehnički pregled',
       ],
     },
@@ -115,13 +116,13 @@ export const usluge: Usluga[] = [
   {
     slug: 'transport-mehanizacije',
     naziv: 'Transport tereta i mehanizacije',
-    kratko: 'Prevoz manje mehanizacije, mašina i tereta na platformi.',
+    kratko: 'Prevoz traktora, poljoprivrednih mašina, manje mehanizacije i tereta na platformi.',
     title: 'Transport tereta i mehanizacije | Šlep Stojanović',
     description:
-      'Prevoz manje mehanizacije, mašina i tereta na platformi – Srem, Beograd, cela Srbija i Evropa. Šlep Stojanović, 063 55 85 81.',
+      'Prevoz traktora, poljoprivrednih mašina, manje mehanizacije i tereta na platformi – Srem, Beograd, Srbija i Evropa. Šlep Stojanović, 063 55 85 81.',
     h1: 'Transport tereta i mehanizacije',
     uvod:
-      'Osim vozila, na platformi prevozimo i manju mehanizaciju, mašine i drugi teret – po Sremu, Beogradu, Srbiji i Evropi.',
+      'Osim vozila, na platformi prevozimo i traktore, poljoprivredne mašine, manju mehanizaciju i drugi teret – po Sremu, Beogradu, Srbiji i Evropi.',
     sekcije: [
       {
         naslov: 'Šta možemo da prevezemo',
@@ -134,7 +135,8 @@ export const usluge: Usluga[] = [
       naslov: 'Primeri tereta',
       stavke: [
         'Manja građevinska mehanizacija',
-        'Poljoprivredne mašine manjih dimenzija',
+        'Traktori',
+        'Poljoprivredne mašine',
         'Viljuškari',
         'Prikolice i kamp prikolice',
         'Čamci na prikolici',
