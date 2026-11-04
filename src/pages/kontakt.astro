@@ -42,9 +42,10 @@ const mrvice = [
       <iframe
         class="mapa"
         title="Mapa – Šlep Stojanović, Stari Banovci"
-        src={`https://maps.google.com/maps?q=${firma.geo.lat},${firma.geo.lng}&z=13&output=embed`}
+        src={firma.googleMapaEmbed()}
         loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"></iframe>
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen></iframe>
     </div>
   </section>
 </Osnovni>

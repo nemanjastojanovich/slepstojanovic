@@ -124,9 +124,10 @@ const grupe = ['Srem', 'Beograd', 'Autoput'] as const;
       <div class="mapa">
         <iframe
           title="Mapa – Šlep Stojanović, Stari Banovci"
-          src={`https://maps.google.com/maps?q=${firma.geo.lat},${firma.geo.lng}&z=10&output=embed`}
+          src={firma.googleMapaEmbed(120000)}
           loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"></iframe>
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen></iframe>
       </div>
     </div>
   </section>

@@ -17,6 +17,9 @@ export const firma = {
     drzava: 'RS',
   },
   geo: { lat: 44.9796426, lng: 20.2714594 },
+  // Google mapa sa profilom firme (Share → Embed a map). raspon = širina prikaza u metrima.
+  googleMapaEmbed: (raspon = 21666) =>
+    `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d${raspon}!2d20.25085981685692!3d44.97967863654568!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x64a4469f91597fdd%3A0xfc77f2ed21f11abd!2zxaBMRVAgU1RPSkFOT1ZJxIY!5e0!3m2!1sen!2srs!4v1793803148645!5m2!1sen!2srs`,
   maticniBroj: '68851378',
   pib: '116043823',
   radnoVreme: '0–24h, svakog dana',
