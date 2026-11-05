@@ -8,7 +8,7 @@ export const pitanjaOpsta: Pitanje[] = [
   {
     pitanje: 'Gde se nalazite i koja mesta pokrivate?',
     odgovor:
-      'Sedište nam je u Starim Banovcima. Radimo u Starim i Novim Banovcima, Batajnici, Novoj i Staroj Pazovi, Inđiji, Belegišu, Surduku, Slankamenu, Zemunu, Novom Beogradu i Beogradu, a vozila prevozimo i po celoj Srbiji i Evropi.',
+      'Sedište nam je u Starim Banovcima. Radimo u Starim i Novim Banovcima, Batajnici, Zemun Polju, Ugrinovcima, Novoj i Staroj Pazovi, Vojki, Inđiji, Belegišu, Surduku, Slankamenu, Zemunu, Surčinu, Dobanovcima, Novom Beogradu i Beogradu, a vozila prevozimo i po celoj Srbiji i Evropi.',
   },
   {
     pitanje: 'Kako da vam javim gde se nalazim?',

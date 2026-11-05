@@ -152,6 +152,76 @@ export const lokacije: Lokacija[] = [
     grupa: 'Beograd',
   },
   {
+    slug: 'zemun-polje',
+    mesto: 'Zemun Polje',
+    uMestu: 'u Zemun Polju',
+    title: 'Šlep služba Zemun Polje 0–24h | Šlep Stojanović',
+    description:
+      'Šlep služba Zemun Polje – šlepanje vozila i pomoć na putu 0–24h, Zemun Polje, Altina i Kamendin. Šlep Stojanović: 063 55 85 81.',
+    tekst: [
+      'Zemun Polje je između Batajnice i Zemuna, na Batajničkom drumu kojim svakodnevno prolazimo ka Beogradu. Radimo u Zemun Polju, Altini, Kamendinu i Plavim horizontima.',
+      'Neispravno vozilo vozimo do servisa u Zemun Polju, Zemunu ili Batajnici, ili do adrese koju vi odredite.',
+    ],
+    okolina: ['Batajnica', 'Zemun', 'Ugrinovci', 'Novi Beograd'],
+    grupa: 'Beograd',
+  },
+  {
+    slug: 'ugrinovci',
+    mesto: 'Ugrinovci',
+    uMestu: 'u Ugrinovcima',
+    title: 'Šlep služba Ugrinovci 0–24h | Šlep Stojanović',
+    description:
+      'Šlep služba Ugrinovci – šlepanje vozila i pomoć na putu 0–24h u Ugrinovcima, Grmovcu i Busijama. Šlep Stojanović: 063 55 85 81.',
+    tekst: [
+      'Ugrinovci su prigradsko naselje Zemuna, između Batajnice i Dobanovaca. Dolazimo u Ugrinovce, Grmovac, Busije i okolna vikend naselja.',
+      'Šlepujemo vozila sa ulica u naselju i sa puteva prema Batajnici, Dobanovcima i Novoj Pazovi.',
+    ],
+    okolina: ['Batajnica', 'Zemun Polje', 'Dobanovci', 'Nova Pazova'],
+    grupa: 'Beograd',
+  },
+  {
+    slug: 'surcin',
+    mesto: 'Surčin',
+    uMestu: 'u Surčinu',
+    title: 'Šlep služba Surčin 0–24h | Šlep Stojanović',
+    description:
+      'Šlep služba Surčin – šlepanje vozila i pomoć na putu 0–24h u opštini Surčin i kod aerodroma Nikola Tesla. Šlep Stojanović: 063 55 85 81.',
+    tekst: [
+      'Radimo u celoj opštini Surčin – u samom Surčinu, Jakovu, Bečmenu, Boljevcima i Progaru, kao i na putevima oko aerodroma Nikola Tesla.',
+      'Vozilo iz Surčina prevozimo do servisa na Novom Beogradu, u Zemunu ili Sremu, a po dogovoru i dalje po Srbiji.',
+    ],
+    okolina: ['Dobanovci', 'Novi Beograd', 'Zemun', 'Ugrinovci'],
+    grupa: 'Beograd',
+  },
+  {
+    slug: 'dobanovci',
+    mesto: 'Dobanovci',
+    uMestu: 'u Dobanovcima',
+    title: 'Šlep služba Dobanovci 0–24h | Šlep Stojanović',
+    description:
+      'Šlep služba Dobanovci – šlepanje vozila i pomoć na putu 0–24h, Dobanovci, industrijska zona i petlja. Šlep Stojanović: 063 55 85 81.',
+    tekst: [
+      'Dobanovci su na raskrsnici važnih puteva – kod petlje Dobanovci se spajaju autoput prema Šidu i obilaznica oko Beograda. Zato ovde često ima kvarova i zastoja.',
+      'Šlepujemo vozila iz naselja, iz industrijske zone i sa prilaza petlji, i prevozimo ih do servisa u Surčinu, Zemunu, Beogradu ili Sremu.',
+    ],
+    okolina: ['Surčin', 'Ugrinovci', 'Batajnica', 'Novi Beograd'],
+    grupa: 'Beograd',
+  },
+  {
+    slug: 'vojka',
+    mesto: 'Vojka',
+    uMestu: 'u Vojki',
+    title: 'Šlep služba Vojka 0–24h | Šlep Stojanović',
+    description:
+      'Šlep služba Vojka – šlepanje vozila i pomoć na putu 0–24h u Vojki i okolini. Šlep Stojanović iz opštine Stara Pazova: 063 55 85 81.',
+    tekst: [
+      'Vojka je selo u našoj opštini Stara Pazova, zapadno od Nove Pazove. Iz Banovaca do vas stižemo bez obilaska kroz Beograd.',
+      'Šlepujemo automobile, kombije i poljoprivredne mašine iz sela i sa puteva prema Novoj i Staroj Pazovi, i vozimo ih do servisa u Pazovi ili dalje.',
+    ],
+    okolina: ['Nova Pazova', 'Stara Pazova', 'Stari Banovci', 'Inđija'],
+    grupa: 'Srem',
+  },
+  {
     slug: 'autoput-beograd-novi-sad',
     mesto: 'Autoput Beograd–Novi Sad',
     uMestu: 'na autoputu Beograd–Novi Sad',
@@ -167,4 +237,5 @@ export const lokacije: Lokacija[] = [
   },
 ];
 
-export const nadjiLokaciju = (mesto: string) => lokacije.find((l) => l.mesto === mesto || l.mesto.includes(mesto));
+export const nadjiLokaciju = (mesto: string) =>
+  lokacije.find((l) => l.mesto === mesto) ?? lokacije.find((l) => l.mesto.includes(mesto));
