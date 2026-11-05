@@ -30,4 +30,6 @@ export const firma = {
     googleRecenzija: 'https://g.page/r/Cb0a8SHt8nf8EBM/review',
   },
   sajt: 'https://slepstojanovic.rs',
+  // Umami statistika (cloud.umami.is) – upiši Website ID. Dok je prazno, praćenje je isključeno.
+  umamiId: 'ed19fa1f-f108-4751-a3ac-fabfc0d6b78a',
 };
