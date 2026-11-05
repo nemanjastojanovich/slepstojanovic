@@ -2,9 +2,11 @@
 import Osnovni from '../../layouts/Osnovni.astro';
 import HeroMali from '../../components/HeroMali.astro';
 import CtaTraka from '../../components/CtaTraka.astro';
+import Faq from '../../components/Faq.astro';
 import { lokacije, nadjiLokaciju, type Lokacija } from '../../data/lokacije';
 import { usluge } from '../../data/usluge';
-import { schemaFirma } from '../../data/schema';
+import { schemaFirma, schemaUsluga, schemaPitanja } from '../../data/schema';
+import { pitanjaLokacija } from '../../data/pitanjaLokacija';
 
 export function getStaticPaths() {
   return lokacije.map((l) => ({ params: { slug: l.slug }, props: { lokacija: l } }));
@@ -20,6 +22,13 @@ const h1 = naAutoputu ? 'Šlep i pomoć na autoputu Beograd–Novi Sad 0–24h' 
 const okolina = lokacija.okolina
   .map((m) => nadjiLokaciju(m))
   .filter((l): l is Lokacija => Boolean(l) && l?.slug !== lokacija.slug);
+const pitanja = pitanjaLokacija[lokacija.slug] ?? [];
+const url = new URL(`/lokacije/${lokacija.slug}`, Astro.site ?? 'https://slepstojanovic.rs').href;
+const sheme: object[] = [
+  schemaFirma(),
+  schemaUsluga(`Šlep služba ${lokacija.mesto}`, lokacija.description, url, [lokacija.mesto]),
+];
+if (pitanja.length) sheme.push(schemaPitanja(pitanja));
 const mrvice = [
   { naziv: 'Početna', url: '/' },
   { naziv: 'Lokacije', url: '/lokacije' },
@@ -27,7 +36,7 @@ const mrvice = [
 ];
 ---
 
-<Osnovni title={lokacija.title} description={lokacija.description} mrvice={mrvice} schema={[schemaFirma()]}>
+<Osnovni title={lokacija.title} description={lokacija.description} mrvice={mrvice} schema={sheme}>
   <HeroMali
     naslov={h1}
     podnaslov={`Šlepanje vozila i pomoć na putu ${lokacija.uMestu} – danju i noću, svakog dana.`}
@@ -54,6 +63,16 @@ const mrvice = [
       </aside>
     </div>
   </section>
+
+  {
+    pitanja.length > 0 && (
+      <section class="sekcija sekcija--siva">
+        <div class="kontejner" style="max-width:820px">
+          <Faq pitanja={pitanja} naslov={`Česta pitanja – ${lokacija.mesto}`} />
+        </div>
+      </section>
+    )
+  }
 
   <CtaTraka naslov={`Treba vam šlep ${lokacija.uMestu}?`} />
 </Osnovni>

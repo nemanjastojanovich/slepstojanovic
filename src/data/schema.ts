@@ -37,7 +37,12 @@ export const schemaFirma = () => ({
   sameAs: [firma.mreze.instagram, firma.mreze.facebook, firma.mreze.googleMape],
 });
 
-export const schemaUsluga = (naziv: string, opis: string, url: string) => ({
+export const schemaUsluga = (
+  naziv: string,
+  opis: string,
+  url: string,
+  podrucje: string[] = ['Srem', 'Beograd', 'Srbija', 'Evropa'],
+) => ({
   '@context': 'https://schema.org',
   '@type': 'Service',
   name: naziv,
@@ -45,7 +50,7 @@ export const schemaUsluga = (naziv: string, opis: string, url: string) => ({
   url,
   serviceType: naziv,
   provider: { '@id': id },
-  areaServed: ['Srem', 'Beograd', 'Srbija', 'Evropa'],
+  areaServed: podrucje,
 });
 
 export const schemaPitanja = (pitanja: Pitanje[]) => ({
