@@ -1,6 +1,6 @@
 import { firma } from './firma';
 import type { Pitanje } from './usluge';
-import { svaMesta } from './podrucje';
+import { mestaSchema } from './podrucje';
 
 const id = `${firma.sajt}/#firma`;
 
@@ -33,7 +33,13 @@ export const schemaFirma = () => ({
     opens: '00:00',
     closes: '23:59',
   },
-  areaServed: [...svaMesta, 'Srbija', 'Evropa'],
+  areaServed: [
+    ...mestaSchema,
+    { '@type': 'AdministrativeArea', name: 'Grad Beograd' },
+    { '@type': 'Country', name: 'Srbija' },
+    { '@type': 'Place', name: 'Evropa' },
+  ],
+  knowsLanguage: ['sr', 'en'],
   sameAs: [firma.mreze.instagram, firma.mreze.facebook, firma.mreze.googleMape],
 });
 

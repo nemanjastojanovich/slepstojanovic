@@ -38,3 +38,22 @@ export const svaMesta = [
   ),
   'Beograd',
 ];
+
+// Za schema podatke: svako mesto sa opštinom/gradom kojem pripada.
+const oblast: Record<string, string> = {
+  'Opština Stara Pazova': 'Opština Stara Pazova',
+  'Opština Inđija': 'Opština Inđija',
+  'Pećinci i Ruma': 'Srem',
+  Beograd: 'Grad Beograd',
+  'Novi Sad': 'Grad Novi Sad',
+};
+
+export const mestaSchema = podrucje.flatMap((g) =>
+  g.mesta
+    .filter((m) => !m.startsWith('ostali'))
+    .map((m) => ({
+      '@type': 'Place',
+      name: m.replace(/ \(.*\)$/, ''),
+      containedInPlace: { '@type': 'AdministrativeArea', name: oblast[g.naslov] ?? g.naslov },
+    })),
+);
