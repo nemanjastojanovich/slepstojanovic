@@ -2,11 +2,13 @@
 // Traka sa dugmadima koja je uvek vidljiva na dnu ekrana na mobilnom.
 import { firma } from '../data/firma';
 import Ikonica from './Ikonica.astro';
+
+const { jezik = 'sr' } = Astro.props as { jezik?: 'sr' | 'en' };
 ---
 
-<div class="poziv-traka" role="region" aria-label="Brzi kontakt">
+<div class="poziv-traka" role="region" aria-label={jezik === 'en' ? 'Quick contact' : 'Brzi kontakt'}>
   <a class="poziv-traka__pozovi" href={firma.telefonLink}>
-    <Ikonica ime="telefon" /> Pozovi {firma.telefon}
+    <Ikonica ime="telefon" /> {jezik === 'en' ? 'Call now' : `Pozovi ${firma.telefon}`}
   </a>
   <a class="poziv-traka__ikona viber" href={firma.viberLink} aria-label="Viber">
     <Ikonica ime="viber" />

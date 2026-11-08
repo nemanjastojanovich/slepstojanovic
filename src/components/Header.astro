@@ -4,41 +4,60 @@ import { firma } from '../data/firma';
 import { logoSlika } from '../data/slike';
 import Ikonica from './Ikonica.astro';
 
-const meni = [
-  { naziv: 'Početna', url: '/' },
-  { naziv: 'Usluge', url: '/#usluge' },
-  { naziv: 'Lokacije', url: '/lokacije' },
-  { naziv: 'Galerija', url: '/galerija' },
-  { naziv: 'O nama', url: '/o-nama' },
-  { naziv: 'Česta pitanja', url: '/cesta-pitanja' },
-  { naziv: 'Kontakt', url: '/kontakt' },
-];
+interface Props {
+  jezik?: 'sr' | 'en';
+  drugiJezik?: string;
+}
+const { jezik = 'sr', drugiJezik = jezik === 'en' ? '/' : '/en' } = Astro.props;
+const en = jezik === 'en';
+
+const meni = en
+  ? [
+      { naziv: 'Home', url: '/en' },
+      { naziv: 'Highway & airport', url: '/en/highway-towing' },
+      { naziv: 'Car transport', url: '/en/car-transport-europe' },
+      { naziv: 'Contact', url: '/en#contact' },
+    ]
+  : [
+      { naziv: 'Početna', url: '/' },
+      { naziv: 'Usluge', url: '/#usluge' },
+      { naziv: 'Lokacije', url: '/lokacije' },
+      { naziv: 'Galerija', url: '/galerija' },
+      { naziv: 'O nama', url: '/o-nama' },
+      { naziv: 'Česta pitanja', url: '/cesta-pitanja' },
+      { naziv: 'Kontakt', url: '/kontakt' },
+    ];
+const jezikDugme = en
+  ? { tekst: 'SR', naslov: 'Srpski', lang: 'sr-Latn' }
+  : { tekst: 'EN', naslov: 'English', lang: 'en' };
 ---
 
 <header class="zaglavlje">
   <div class="kontejner zaglavlje__red">
-    <a href="/" class="logo" aria-label={`${firma.ime} – početna`}>
+    <a href={en ? '/en' : '/'} class="logo" aria-label={en ? `${firma.ime} – home` : `${firma.ime} – početna`}>
       <Image src={logoSlika} alt={`${firma.ime} logo`} width={120} height={90} loading="eager" />
       <span class="logo__tekst">
         <strong>{firma.ime}</strong>
-        <span>{firma.podnaslov} · 0–24h</span>
+        <span>{en ? 'Belgrade area · 24/7' : `${firma.podnaslov} · 0–24h`}</span>
       </span>
     </a>
 
-    <nav class="meni-desktop" aria-label="Glavni meni">
+    <nav class="meni-desktop" aria-label={en ? 'Main menu' : 'Glavni meni'}>
       {meni.map((s) => <a href={s.url}>{s.naziv}</a>)}
     </nav>
 
+    <a class="jezik" href={drugiJezik} hreflang={jezikDugme.lang} lang={jezikDugme.lang} title={jezikDugme.naslov}>{jezikDugme.tekst}</a>
+
     <a class="dugme dugme--crveno zaglavlje__tel" href={firma.telefonLink}>
       <Ikonica ime="telefon" />
-      <span>{firma.telefon}</span>
+      <span>{en ? firma.telefonMedjunarodni : firma.telefon}</span>
     </a>
 
     <details class="meni-mobilni">
-      <summary aria-label="Otvori meni">
+      <summary aria-label={en ? 'Open menu' : 'Otvori meni'}>
         <span></span><span></span><span></span>
       </summary>
-      <nav aria-label="Mobilni meni">
+      <nav aria-label={en ? 'Mobile menu' : 'Mobilni meni'}>
         {meni.map((s) => <a href={s.url}>{s.naziv}</a>)}
       </nav>
     </details>
@@ -95,6 +114,20 @@ const meni = [
     font-size: 0.95rem;
   }
   .meni-desktop a:hover {
+    color: var(--crvena);
+  }
+  .jezik {
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: var(--crna);
+    text-decoration: none;
+    border: 2px solid var(--crna);
+    border-radius: 6px;
+    padding: 4px 8px;
+    line-height: 1;
+  }
+  .jezik:hover {
+    border-color: var(--crvena);
     color: var(--crvena);
   }
   .zaglavlje__tel {

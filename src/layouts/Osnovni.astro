@@ -10,6 +10,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import PozoviDugme from '../components/PozoviDugme.astro';
 import { schemaMrvice, type Mrvica } from '../data/schema';
+import { nadjiPar, jezikPutanje } from '../data/jezici';
 
 interface Props {
   title: string;
@@ -21,11 +22,13 @@ interface Props {
 }
 
 const { title, description, slika, schema = [], mrvice, noindex } = Astro.props;
+const jezik = jezikPutanje(Astro.url.pathname);
+const alternativa = nadjiPar(Astro.url.pathname);
 const sveSheme = mrvice && mrvice.length > 1 ? [...schema, schemaMrvice(mrvice)] : schema;
 ---
 
 <!doctype html>
-<html lang="sr-Latn">
+<html lang={jezik === 'en' ? 'en' : 'sr-Latn'}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -33,7 +36,7 @@ const sveSheme = mrvice && mrvice.length > 1 ? [...schema, schemaMrvice(mrvice)]
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="sitemap" href="/sitemap-index.xml" />
-    <Seo title={title} description={description} slika={slika} schema={sveSheme} noindex={noindex} />
+    <Seo title={title} description={description} slika={slika} schema={sveSheme} noindex={noindex} jezik={jezik} alternativa={alternativa} />
     {firma.umamiId && (
       <>
         <script is:inline defer src="https://cloud.umami.is/script.js" data-website-id={firma.umamiId} data-domains="slepstojanovic.rs,www.slepstojanovic.rs"></script>
@@ -51,12 +54,12 @@ const sveSheme = mrvice && mrvice.length > 1 ? [...schema, schemaMrvice(mrvice)]
     )}
   </head>
   <body>
-    <a href="#sadrzaj" class="skriveno">Preskoči na sadržaj</a>
-    <Header />
+    <a href="#sadrzaj" class="skriveno">{jezik === 'en' ? 'Skip to content' : 'Preskoči na sadržaj'}</a>
+    <Header jezik={jezik} drugiJezik={alternativa ? (jezik === 'en' ? alternativa.sr : alternativa.en) : jezik === 'en' ? '/' : '/en'} />
     <main id="sadrzaj">
       <slot />
     </main>
-    <Footer />
-    <PozoviDugme />
+    <Footer jezik={jezik} />
+    <PozoviDugme jezik={jezik} />
   </body>
 </html>

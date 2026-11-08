@@ -4,10 +4,12 @@ import KontaktDugmad from './KontaktDugmad.astro';
 interface Props {
   naslov?: string;
   tekst?: string;
+  jezik?: 'sr' | 'en';
 }
 const {
   naslov = 'Stalo vam je vozilo? Pozovite odmah.',
   tekst = 'Dostupni smo 0–24h, svakog dana. Lokaciju možete poslati preko Vibera ili WhatsApp-a.',
+  jezik = 'sr',
 } = Astro.props;
 ---
 
@@ -17,7 +19,7 @@ const {
       <h2>{naslov}</h2>
       <p>{tekst}</p>
     </div>
-    <KontaktDugmad svetla />
+    <KontaktDugmad svetla jezik={jezik} />
   </div>
 </section>
 

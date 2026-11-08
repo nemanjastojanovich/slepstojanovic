@@ -1,0 +1,72 @@
+---
+import Osnovni from '../../layouts/Osnovni.astro';
+import HeroMali from '../../components/HeroMali.astro';
+import CtaTraka from '../../components/CtaTraka.astro';
+import Faq from '../../components/Faq.astro';
+import { firma } from '../../data/firma';
+import { schemaFirma, schemaUsluga, schemaPitanja } from '../../data/schema';
+
+const mrvice = [
+  { naziv: 'Home', url: '/en' },
+  { naziv: 'Car transport Serbia – Europe', url: '/en/car-transport-europe' },
+];
+
+const pitanja = [
+  { pitanje: 'What vehicles do you transport?', odgovor: 'Cars, vans and motorcycles, including vehicles that do not run, as well as classic cars and smaller machinery that fits on the platform.' },
+  { pitanje: 'Can you transport a car that does not start?', odgovor: 'Yes. Non-running and damaged vehicles are loaded onto the flatbed and secured for the trip.' },
+  { pitanje: 'How do I get an offer?', odgovor: 'Send us the pickup and delivery address, the vehicle type, whether it runs, and your preferred date – by phone, WhatsApp, Viber or e-mail.' },
+];
+
+const url = new URL('/en/car-transport-europe', Astro.site ?? firma.sajt).href;
+---
+
+<Osnovni
+  title="Car Transport Serbia – Europe | Vehicle Transport on Flatbed | Šlep Stojanović"
+  description="Vehicle transport within Serbia and to or from Europe on a flatbed: cars, vans, non-running vehicles and classic cars. We speak English. WhatsApp +381 63 558 581."
+  mrvice={mrvice}
+  schema={[
+    schemaFirma(),
+    schemaUsluga('Car transport Serbia – Europe', 'Planned transport of vehicles on a flatbed within Serbia and to or from other European countries.', url, ['Serbia', 'Europe']),
+    schemaPitanja(pitanja),
+  ]}
+>
+  <HeroMali
+    jezik="en"
+    naslov="Car transport Serbia – Europe"
+    podnaslov="Planned transport of cars, vans, non-running vehicles and classic cars on our flatbed – within Serbia and to or from other European countries."
+    mrvice={mrvice}
+  />
+
+  <section class="sekcija">
+    <div class="kontejner" style="max-width:820px">
+      <h2 class="naslov-sekcije">When you need us</h2>
+      <ul class="lista-tacke">
+        <li>You bought a car abroad and need it brought to Serbia – or the other way round.</li>
+        <li>Your car broke down while travelling and needs to go to a garage in another city or country.</li>
+        <li>You are moving and want your vehicle transported.</li>
+        <li>You need a classic car or a non-running vehicle moved safely on a flatbed.</li>
+      </ul>
+
+      <h2 class="naslov-sekcije">What to send us</h2>
+      <ul class="lista-tacke">
+        <li>Pickup address and delivery address</li>
+        <li>Vehicle type and whether it runs</li>
+        <li>Your preferred date</li>
+        <li>A photo of the vehicle, if you can</li>
+      </ul>
+      <p>Send it by WhatsApp or Viber at <a href={firma.whatsappLink}>{firma.telefonMedjunarodni}</a> or by e-mail to <a href={`mailto:${firma.email}`}>{firma.email}</a>.</p>
+    </div>
+  </section>
+
+  <section class="sekcija sekcija--siva">
+    <div class="kontejner" style="max-width:820px">
+      <Faq pitanja={pitanja} naslov="Frequently asked questions" />
+    </div>
+  </section>
+
+  <CtaTraka
+    jezik="en"
+    naslov="Need a vehicle transported?"
+    tekst="Call or message us – we speak English."
+  />
+</Osnovni>

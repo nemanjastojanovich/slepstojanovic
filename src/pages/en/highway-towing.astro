@@ -1,0 +1,78 @@
+---
+import Osnovni from '../../layouts/Osnovni.astro';
+import HeroMali from '../../components/HeroMali.astro';
+import CtaTraka from '../../components/CtaTraka.astro';
+import Faq from '../../components/Faq.astro';
+import { firma } from '../../data/firma';
+import { schemaFirma, schemaUsluga, schemaPitanja } from '../../data/schema';
+
+const mrvice = [
+  { naziv: 'Home', url: '/en' },
+  { naziv: 'Highway & airport towing', url: '/en/highway-towing' },
+];
+
+const pitanja = [
+  { pitanje: 'What should I tell you when I call?', odgovor: 'Your direction (towards Belgrade or towards Novi Sad) and the nearest exit, or the kilometre number from the sign by the road. Sharing your location on WhatsApp or Viber is even easier.' },
+  { pitanje: 'Where can you take my vehicle?', odgovor: 'To a garage of your choice, to your address or hotel – in Belgrade, Srem, Novi Sad or further within Serbia.' },
+  { pitanje: 'I have a rental car. What should I do?', odgovor: 'Contact your rental company first – they often have their own assistance. If they ask you to arrange towing yourself, call or message us.' },
+  { pitanje: 'Do you work at night and on weekends?', odgovor: 'Yes, we work 24/7, every day of the year.' },
+];
+
+const url = new URL('/en/highway-towing', Astro.site ?? firma.sajt).href;
+---
+
+<Osnovni
+  title="Towing on the Belgrade – Novi Sad Motorway & Belgrade Airport 24/7 | Šlep Stojanović"
+  description="Breakdown on the Belgrade–Novi Sad motorway or near Belgrade Airport? 24/7 towing from Stari Banovci, right next to the motorway. We speak English. WhatsApp +381 63 558 581."
+  mrvice={mrvice}
+  schema={[
+    schemaFirma(),
+    schemaUsluga('Motorway and airport towing', 'Towing and roadside assistance on the Belgrade – Novi Sad motorway and around Belgrade Nikola Tesla Airport.', url, ['Belgrade – Novi Sad motorway', 'Surčin', 'Belgrade']),
+    schemaPitanja(pitanja),
+  ]}
+>
+  <HeroMali
+    jezik="en"
+    naslov="Towing on the Belgrade – Novi Sad motorway & near Belgrade Airport"
+    podnaslov="24/7 towing and roadside assistance. We are based in Stari Banovci, right next to the motorway."
+    mrvice={mrvice}
+  />
+
+  <section class="sekcija">
+    <div class="kontejner" style="max-width:820px">
+      <h2 class="naslov-sekcije">Belgrade – Novi Sad motorway</h2>
+      <p>
+        We most often help on the section of the motorway from Belgrade through Batajnica and Pazova to Inđija. We
+        tow cars, vans and motorcycles to a garage or address of your choice.
+      </p>
+
+      <h2 class="naslov-sekcije">If your vehicle breaks down on the motorway</h2>
+      <ol class="lista-tacke">
+        <li>Switch on your hazard lights.</li>
+        <li>Put on a reflective vest before you get out of the vehicle.</li>
+        <li>Place the warning triangle behind the vehicle, if it is safe to do so.</li>
+        <li>Move behind the safety barrier, away from the traffic.</li>
+        <li>Call us and tell us your direction and the nearest exit – or share your location on WhatsApp or Viber.</li>
+      </ol>
+
+      <h2 class="naslov-sekcije">Belgrade Airport & Surčin</h2>
+      <p>
+        We also work on the roads around Belgrade Nikola Tesla Airport and in Surčin and Dobanovci, including the
+        Dobanovci interchange and the Belgrade bypass. Parking areas with controlled entry we can reach only when access
+        for a tow truck is allowed.
+      </p>
+    </div>
+  </section>
+
+  <section class="sekcija sekcija--siva">
+    <div class="kontejner" style="max-width:820px">
+      <Faq pitanja={pitanja} naslov="Frequently asked questions" />
+    </div>
+  </section>
+
+  <CtaTraka
+    jezik="en"
+    naslov="Stuck on the motorway? Call now."
+    tekst="We are available 24/7. Share your location on WhatsApp or Viber."
+  />
+</Osnovni>

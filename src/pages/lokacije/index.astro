@@ -5,9 +5,10 @@ import CtaTraka from '../../components/CtaTraka.astro';
 import { lokacije } from '../../data/lokacije';
 import { firma } from '../../data/firma';
 import { schemaFirma } from '../../data/schema';
+import { podrucje } from '../../data/podrucje';
 
 const grupe = [
-  { kljuc: 'Srem', naslov: 'Srem – opština Stara Pazova i Inđija' },
+  { kljuc: 'Srem', naslov: 'Srem' },
   { kljuc: 'Beograd', naslov: 'Beograd' },
   { kljuc: 'Autoput', naslov: 'Autoput' },
 ] as const;
@@ -19,7 +20,7 @@ const mrvice = [
 
 <Osnovni
   title="Lokacije – šlep služba u Sremu i Beogradu | Šlep Stojanović"
-  description="Šlep služba za Stare i Nove Banovce, Pazovu, Inđiju, Belegiš, Surduk, Slankamen, Batajnicu, Zemun, Novi Beograd i Beograd. 0–24h: 063 55 85 81."
+  description="Šlep služba za Banovce, Pazovu, Inđiju, Bešku, Simanovce, Belegiš, Surduk, Slankamen, Batajnicu, Zemun, Surčin, Novi Beograd i Beograd. 0–24h: 063 55 85 81."
   mrvice={mrvice}
   schema={[schemaFirma()]}
 >
@@ -54,6 +55,23 @@ const mrvice = [
 
   <section class="sekcija sekcija--siva">
     <div class="kontejner">
+      <h2 class="naslov-sekcije">Sva mesta koja pokrivamo</h2>
+      <div class="sva-mesta">
+        {
+          podrucje.map((g) => (
+            <div>
+              <h3>{g.naslov}</h3>
+              <p>{g.mesta.join(', ')}</p>
+            </div>
+          ))
+        }
+      </div>
+      <p>Vozila po dogovoru prevozimo i po celoj Srbiji i Evropi.</p>
+    </div>
+  </section>
+
+  <section class="sekcija">
+    <div class="kontejner">
       <h2 class="naslov-sekcije">Mapa</h2>
       <iframe
         class="mapa"
@@ -71,6 +89,15 @@ const mrvice = [
 <style>
   .grupa + .grupa {
     margin-top: 48px;
+  }
+  .sva-mesta {
+    display: grid;
+    gap: 8px 32px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    margin-bottom: 16px;
+  }
+  .sva-mesta h3 {
+    margin-bottom: 4px;
   }
   .mapa {
     width: 100%;

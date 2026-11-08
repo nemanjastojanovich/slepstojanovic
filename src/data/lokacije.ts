@@ -91,6 +91,7 @@ export const lokacije: Lokacija[] = [
     tekst: [
       'Inđija je na istom autoputu kao i Pazova, pa do vas stižemo direktno autoputem. Radimo u Inđiji i okolnim selima.',
       'Ako vam vozilo stane na autoputu kod Inđije, pozovite nas – prevešćemo ga do servisa u Inđiji, Pazovi, Beogradu ili Novom Sadu.',
+      'Dolazimo i u sela opštine Inđija – Bešku, Maradik, Krčedin, Ljukovo, Novi Karlovci, Čortanovce, Jarkovce i Slankamenačke Vinograde.',
     ],
     okolina: ['Stara Pazova', 'Slankamen', 'Surduk'],
     grupa: 'Srem',

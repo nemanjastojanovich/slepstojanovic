@@ -7,13 +7,14 @@ interface Props {
   podnaslov?: string;
   mrvice: Mrvica[];
   dugmad?: boolean;
+  jezik?: 'sr' | 'en';
 }
-const { naslov, podnaslov, mrvice, dugmad = true } = Astro.props;
+const { naslov, podnaslov, mrvice, dugmad = true, jezik = 'sr' } = Astro.props;
 ---
 
 <section class="hero-mali">
   <div class="kontejner">
-    <nav class="mrvice" aria-label="Putanja">
+    <nav class="mrvice" aria-label={jezik === 'en' ? 'Breadcrumb' : 'Putanja'}>
       <ol>
         {
           mrvice.map((m, i) =>
@@ -24,6 +25,6 @@ const { naslov, podnaslov, mrvice, dugmad = true } = Astro.props;
     </nav>
     <h1>{naslov}</h1>
     {podnaslov && <p class="podnaslov">{podnaslov}</p>}
-    {dugmad && <KontaktDugmad svetla />}
+    {dugmad && <KontaktDugmad svetla jezik={jezik} />}
   </div>
 </section>

@@ -1,6 +1,6 @@
 import { firma } from './firma';
 import type { Pitanje } from './usluge';
-import { lokacije } from './lokacije';
+import { svaMesta } from './podrucje';
 
 const id = `${firma.sajt}/#firma`;
 
@@ -33,7 +33,7 @@ export const schemaFirma = () => ({
     opens: '00:00',
     closes: '23:59',
   },
-  areaServed: [...lokacije.filter((l) => l.grupa !== 'Autoput').map((l) => l.mesto), 'Srbija', 'Evropa'],
+  areaServed: [...svaMesta, 'Srbija', 'Evropa'],
   sameAs: [firma.mreze.instagram, firma.mreze.facebook, firma.mreze.googleMape],
 });
 

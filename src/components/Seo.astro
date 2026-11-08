@@ -7,9 +7,12 @@ interface Props {
   slika?: string;
   schema?: object[];
   noindex?: boolean;
+  jezik?: 'sr' | 'en';
+  alternativa?: { sr: string; en: string };
 }
 
-const { title, description, slika = '/og-image.jpg', schema = [], noindex = false } = Astro.props;
+const { title, description, slika = '/og-image.jpg', schema = [], noindex = false, jezik = 'sr', alternativa } = Astro.props;
+const apsolutno = (p: string) => new URL(p, Astro.site ?? firma.sajt).href;
 const canonical = new URL(Astro.url.pathname.replace(/\.html$/, ''), Astro.site ?? firma.sajt).href;
 const slikaUrl = new URL(slika, Astro.site ?? firma.sajt).href;
 ---
@@ -18,9 +21,18 @@ const slikaUrl = new URL(slika, Astro.site ?? firma.sajt).href;
 <meta name="description" content={description} />
 <link rel="canonical" href={canonical} />
 {noindex && <meta name="robots" content="noindex" />}
+{
+  alternativa && (
+    <>
+      <link rel="alternate" hreflang="sr" href={apsolutno(alternativa.sr)} />
+      <link rel="alternate" hreflang="en" href={apsolutno(alternativa.en)} />
+      <link rel="alternate" hreflang="x-default" href={apsolutno(alternativa.sr)} />
+    </>
+  )
+}
 
 <meta property="og:type" content="website" />
-<meta property="og:locale" content="sr_RS" />
+<meta property="og:locale" content={jezik === 'en' ? 'en_US' : 'sr_RS'} />
 <meta property="og:site_name" content={firma.ime} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />

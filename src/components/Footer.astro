@@ -4,18 +4,20 @@ import { usluge } from '../data/usluge';
 import { lokacije } from '../data/lokacije';
 import Ikonica from './Ikonica.astro';
 
+const { jezik = 'sr' } = Astro.props as { jezik?: 'sr' | 'en' };
+const en = jezik === 'en';
 ---
 
 <footer class="futer">
   <div class="kontejner futer__mreza">
     <div>
       <p class="futer__ime">{firma.ime}</p>
-      <p>Šlep služba i pomoć na putu 0–24h. Srem, Beograd, Srbija i Evropa.</p>
+      <p>{en ? 'Towing and roadside assistance 24/7. Belgrade area, Serbia and Europe. We speak English.' : 'Šlep služba i pomoć na putu 0–24h. Srem, Beograd, Srbija i Evropa.'}</p>
       <ul class="futer__kontakt">
-        <li><Ikonica ime="telefon" /><a href={firma.telefonLink}>{firma.telefon}</a> (Viber, WhatsApp)</li>
+        <li><Ikonica ime="telefon" /><a href={firma.telefonLink}>{en ? firma.telefonMedjunarodni : firma.telefon}</a> (Viber, WhatsApp)</li>
         <li><Ikonica ime="mejl" /><a href={`mailto:${firma.email}`}>{firma.email}</a></li>
-        <li><Ikonica ime="lokacija" />{firma.adresa.ulica}, {firma.adresa.postanskiBroj} {firma.adresa.mesto}</li>
-        <li><Ikonica ime="sat" />Radno vreme: {firma.radnoVreme}</li>
+        <li><Ikonica ime="lokacija" />{firma.adresa.ulica}, {firma.adresa.postanskiBroj} {firma.adresa.mesto}{en ? ', Serbia' : ''}</li>
+        <li><Ikonica ime="sat" />{en ? 'Open 24/7, every day' : `Radno vreme: ${firma.radnoVreme}`}</li>
       </ul>
       <div class="futer__mreze">
         <a href={firma.mreze.instagram} aria-label="Instagram" rel="noopener" target="_blank"><Ikonica ime="instagram" /></a>
@@ -24,6 +26,19 @@ import Ikonica from './Ikonica.astro';
       </div>
     </div>
 
+    {
+      en ? (
+        <div>
+          <p class="futer__naslov">English</p>
+          <ul>
+            <li><a href="/en">Towing & roadside assistance</a></li>
+            <li><a href="/en/highway-towing">Highway & airport towing</a></li>
+            <li><a href="/en/car-transport-europe">Car transport Serbia – Europe</a></li>
+            <li><a href="/" hreflang="sr-Latn" lang="sr-Latn">Srpski</a></li>
+          </ul>
+        </div>
+      ) : (
+        <>
     <div>
       <p class="futer__naslov">Usluge</p>
       <ul>
@@ -48,6 +63,9 @@ import Ikonica from './Ikonica.astro';
         <li><a href="/politika-privatnosti">Politika privatnosti</a></li>
       </ul>
     </div>
+        </>
+      )
+    }
   </div>
 
   <div class="kontejner futer__pravno">
