@@ -34,4 +34,6 @@ export const firma = {
   umamiId: 'ed19fa1f-f108-4751-a3ac-fabfc0d6b78a',
   // Google tag (Google Ads) – iz Google Ads → Set up with a Google Tag.
   googleTag: 'GTM-P7DG8PVC',
+  // Google Ads konverzija "Contact" – okida se na klik na Pozovi / Viber / WhatsApp.
+  googleKonverzija: 'AW-18551888238/b-kfCMvfpLcdEO6ynY5F',
 };

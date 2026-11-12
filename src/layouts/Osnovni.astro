@@ -43,10 +43,10 @@ const sveSheme = mrvice && mrvice.length > 1 ? [...schema, schemaMrvice(mrvice)]
           <script is:inline async src={`https://www.googletagmanager.com/gtm.js?id=${firma.googleTag}`}></script>
           <script is:inline>
             window.dataLayer = window.dataLayer || [];
-            function gtag() {
+            window.gtag = function () {
               dataLayer.push(arguments);
-            }
-            gtag('js', new Date());
+            };
+            window.gtag('js', new Date());
           </script>
         </>
       )
@@ -54,8 +54,8 @@ const sveSheme = mrvice && mrvice.length > 1 ? [...schema, schemaMrvice(mrvice)]
     {firma.umamiId && (
       <script is:inline defer src="https://cloud.umami.is/script.js" data-website-id={firma.umamiId} data-domains="slepstojanovic.rs,www.slepstojanovic.rs"></script>
     )}
-    <script is:inline>
-      // Klikovi na Pozovi / Viber / WhatsApp: broji Umami, a šalje se i Google tagu (dataLayer, događaj "kontakt_klik").
+    <script define:vars={{ konverzija: firma.googleKonverzija }}>
+      // Klikovi na Pozovi / Viber / WhatsApp: broji Umami, a Google Ads dobija konverziju "Contact".
       document.addEventListener('click', function (e) {
         var a = e.target.closest && e.target.closest('a[href]');
         if (!a) return;
@@ -63,6 +63,7 @@ const sveSheme = mrvice && mrvice.length > 1 ? [...schema, schemaMrvice(mrvice)]
         var ime = h.indexOf('tel:') === 0 ? 'Poziv' : h.indexOf('viber:') === 0 ? 'Viber' : h.indexOf('wa.me') !== -1 ? 'WhatsApp' : null;
         if (!ime) return;
         if (window.umami) window.umami.track(ime, { stranica: location.pathname });
+        if (window.gtag && konverzija) window.gtag('event', 'conversion', { send_to: konverzija });
         if (window.dataLayer) window.dataLayer.push({ event: 'kontakt_klik', kanal: ime, stranica: location.pathname });
       });
     </script>
