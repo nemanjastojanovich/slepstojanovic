@@ -37,21 +37,35 @@ const sveSheme = mrvice && mrvice.length > 1 ? [...schema, schemaMrvice(mrvice)]
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="sitemap" href="/sitemap-index.xml" />
     <Seo title={title} description={description} slika={slika} schema={sveSheme} noindex={noindex} jezik={jezik} alternativa={alternativa} />
+    {
+      firma.googleTag && (
+        <>
+          <script is:inline async src={`https://www.googletagmanager.com/gtm.js?id=${firma.googleTag}`}></script>
+          <script is:inline>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+              dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
+          </script>
+        </>
+      )
+    }
     {firma.umamiId && (
-      <>
-        <script is:inline defer src="https://cloud.umami.is/script.js" data-website-id={firma.umamiId} data-domains="slepstojanovic.rs,www.slepstojanovic.rs"></script>
-        <script is:inline>
-          // Broji klikove na Pozovi / Viber / WhatsApp (bez kolačića).
-          document.addEventListener('click', function (e) {
-            var a = e.target.closest && e.target.closest('a[href]');
-            if (!a || !window.umami) return;
-            var h = a.getAttribute('href');
-            var ime = h.indexOf('tel:') === 0 ? 'Poziv' : h.indexOf('viber:') === 0 ? 'Viber' : h.indexOf('wa.me') !== -1 ? 'WhatsApp' : null;
-            if (ime) window.umami.track(ime, { stranica: location.pathname });
-          });
-        </script>
-      </>
+      <script is:inline defer src="https://cloud.umami.is/script.js" data-website-id={firma.umamiId} data-domains="slepstojanovic.rs,www.slepstojanovic.rs"></script>
     )}
+    <script is:inline>
+      // Klikovi na Pozovi / Viber / WhatsApp: broji Umami, a šalje se i Google tagu (dataLayer, događaj "kontakt_klik").
+      document.addEventListener('click', function (e) {
+        var a = e.target.closest && e.target.closest('a[href]');
+        if (!a) return;
+        var h = a.getAttribute('href');
+        var ime = h.indexOf('tel:') === 0 ? 'Poziv' : h.indexOf('viber:') === 0 ? 'Viber' : h.indexOf('wa.me') !== -1 ? 'WhatsApp' : null;
+        if (!ime) return;
+        if (window.umami) window.umami.track(ime, { stranica: location.pathname });
+        if (window.dataLayer) window.dataLayer.push({ event: 'kontakt_klik', kanal: ime, stranica: location.pathname });
+      });
+    </script>
   </head>
   <body>
     <a href="#sadrzaj" class="skriveno">{jezik === 'en' ? 'Skip to content' : 'Preskoči na sadržaj'}</a>
