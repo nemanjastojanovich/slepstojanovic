@@ -79,7 +79,8 @@ export const pitanjaLokacija: Record<string, Pitanje[]> = {
     { pitanje: 'Gde vozite vozilo iz Vojke?', odgovor: 'Do servisa u Novoj ili Staroj Pazovi, u Inđiji ili Beogradu, ili do adrese koju vi odredite.' },
   ],
   'autoput-beograd-novi-sad': [
-    { pitanje: 'Šta da kažem kada pozovem?', odgovor: 'Recite da li idete ka Beogradu ili ka Novom Sadu, i najbliži izlaz (npr. Batajnica, Pazova, Inđija) ili kilometar sa table pored puta. Najlakše je da nam pošaljete lokaciju preko Vibera ili WhatsApp-a.' },
+    { pitanje: 'Koje deonice autoputa pokrivate?', odgovor: 'Autoput Beograd–Novi Sad od Beograda do Inđije, i autoput Beograd–Zagreb (E70) od Novog Beograda, preko Dobanovaca i Surčina, do naplatne stanice Šimanovci i izlaza za Pećince. Dolazimo i na obilaznicu oko Beograda.' },
+    { pitanje: 'Šta da kažem kada pozovem?', odgovor: 'Recite na kom ste autoputu, u kom smeru, i najbliži izlaz (npr. Batajnica, Pazova, Inđija, Dobanovci, Šimanovci) ili kilometar sa table pored puta. Najlakše je da nam pošaljete lokaciju preko Vibera ili WhatsApp-a.' },
     { pitanje: 'Gde vozite vozilo sa autoputa?', odgovor: 'Do servisa koji vi izaberete ili do vaše adrese – u Beogradu, Sremu, Novom Sadu ili dalje po Srbiji.' },
     { pitanje: 'Da li dolazite noću i vikendom?', odgovor: 'Da, na autoput izlazimo 0–24h, svakog dana.' },
   ],

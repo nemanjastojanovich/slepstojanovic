@@ -224,16 +224,17 @@ export const lokacije: Lokacija[] = [
   },
   {
     slug: 'autoput-beograd-novi-sad',
-    mesto: 'Autoput Beograd–Novi Sad',
-    uMestu: 'na autoputu Beograd–Novi Sad',
-    title: 'Šlep na autoputu Beograd–Novi Sad 0–24h | Šlep Stojanović',
+    mesto: 'Autoput Beograd–Novi Sad i Beograd–Zagreb',
+    uMestu: 'na autoputu Beograd–Novi Sad i Beograd–Zagreb',
+    title: 'Šlep na autoputu BG–Novi Sad i BG–Zagreb 0–24h | Šlep Stojanović',
     description:
-      'Kvar na autoputu Beograd–Novi Sad? Šlep i pomoć na putu 0–24h na deonici Beograd – Batajnica – Pazova – Inđija. Pozovite 063 55 85 81.',
+      'Kvar na autoputu? Šlep i pomoć na putu 0–24h: Beograd–Novi Sad do Inđije i Beograd–Zagreb (E70) do Pećinaca. Pozovite 063 55 85 81.',
     tekst: [
-      'Sedište nam je u Starim Banovcima, blizu autoputa Beograd–Novi Sad. Najčešće intervenišemo na deonici od Beograda, preko Batajnice i Pazove, do Inđije.',
+      'Sedište nam je u Starim Banovcima, između dva autoputa. Na autoputu Beograd–Novi Sad intervenišemo na deonici od Beograda, preko Batajnice i Pazove, do Inđije.',
+      'Na autoputu Beograd–Zagreb (E70) pokrivamo deonicu od Novog Beograda, preko petlje Dobanovci i Surčina, do naplatne stanice Šimanovci i izlaza za Pećince. Dolazimo i na obilaznicu oko Beograda.',
       'Ako vam vozilo stane na autoputu: uključite sva četiri pokazivača pravca, obucite prsluk, postavite trougao i sklonite se iza zaštitne ograde. Zatim nas pozovite i recite smer i približno mesto (najbliži izlaz ili kilometar).',
     ],
-    okolina: ['Batajnica', 'Nova Pazova', 'Stara Pazova', 'Inđija'],
+    okolina: ['Batajnica', 'Nova Pazova', 'Inđija', 'Dobanovci', 'Surčin'],
     grupa: 'Autoput',
   },
 ];

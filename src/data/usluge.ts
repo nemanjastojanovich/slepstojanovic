@@ -70,7 +70,7 @@ export const usluge: Usluga[] = [
     kratko: 'Kvar na putu ili autoputu, danju i noću, svakog dana u nedelji.',
     title: 'Pomoć na putu 0–24h | Šlep Stojanović – Srem i Beograd',
     description:
-      'Pomoć na putu 0–24h, svakog dana. Kvar na putu ili autoputu Beograd–Novi Sad? Pozovite Šlep Stojanović: 063 55 85 81 (Viber, WhatsApp).',
+      'Pomoć na putu 0–24h, svakog dana. Kvar na putu ili autoputu? Pozovite Šlep Stojanović: 063 55 85 81 (Viber, WhatsApp).',
     h1: 'Pomoć na putu 0–24h',
     uvod:
       'Kvar ne bira vreme. Dostupni smo 24 sata dnevno, 7 dana u nedelji – i radnim danom i vikendom, i noću i praznikom.',
@@ -86,7 +86,7 @@ export const usluge: Usluga[] = [
       {
         naslov: 'Pomoć na autoputu',
         tekst: [
-          'Stari Banovci su blizu autoputa Beograd–Novi Sad, pa dežuramo i na tom delu puta – od Beograda prema Inđiji.',
+          'Stari Banovci su između dva autoputa, pa dežuramo na autoputu Beograd–Novi Sad (od Beograda do Inđije) i na autoputu Beograd–Zagreb (od Novog Beograda, preko Dobanovaca, do Šimanovaca i Pećinaca).',
         ],
       },
     ],

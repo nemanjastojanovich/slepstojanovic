@@ -14,7 +14,7 @@ export const podrucje: { naslov: string; naslovEn: string; mesta: string[] }[] =
   {
     naslov: 'Pećinci i Ruma',
     naslovEn: 'Pećinci and Ruma',
-    mesta: ['Simanovci', 'Popinci', 'Putinci', 'Dobrinci'],
+    mesta: ['Pećinci', 'Šimanovci', 'Popinci', 'Putinci', 'Dobrinci'],
   },
   {
     naslov: 'Beograd',

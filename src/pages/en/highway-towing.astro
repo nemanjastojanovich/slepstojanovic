@@ -8,7 +8,7 @@ import { schemaFirma, schemaUsluga, schemaPitanja } from '../../data/schema';
 
 const mrvice = [
   { naziv: 'Home', url: '/en' },
-  { naziv: 'Highway & airport towing', url: '/en/highway-towing' },
+  { naziv: 'Motorway & airport towing', url: '/en/highway-towing' },
 ];
 
 const pitanja = [
@@ -22,19 +22,19 @@ const url = new URL('/en/highway-towing', Astro.site ?? firma.sajt).href;
 ---
 
 <Osnovni
-  title="Towing on the Belgrade – Novi Sad Motorway & Belgrade Airport 24/7 | Šlep Stojanović"
-  description="Breakdown on the Belgrade–Novi Sad motorway or near Belgrade Airport? 24/7 towing from Stari Banovci, right next to the motorway. We speak English. WhatsApp +381 63 558 581."
+  title="Towing on Belgrade Motorways (E75, E70) & Airport 24/7 | Šlep Stojanović"
+  description="Breakdown on the Belgrade–Novi Sad or Belgrade–Zagreb motorway, or near Belgrade Airport? 24/7 towing from Stari Banovci, between both motorways. We speak English. WhatsApp +381 63 558 581."
   mrvice={mrvice}
   schema={[
     schemaFirma(),
-    schemaUsluga('Motorway and airport towing', 'Towing and roadside assistance on the Belgrade – Novi Sad motorway and around Belgrade Nikola Tesla Airport.', url, ['Belgrade – Novi Sad motorway', 'Surčin', 'Belgrade']),
+    schemaUsluga('Motorway and airport towing', 'Towing and roadside assistance on the Belgrade – Novi Sad and Belgrade – Zagreb (E70) motorways and around Belgrade Nikola Tesla Airport.', url, ['Belgrade – Novi Sad motorway', 'Belgrade – Zagreb motorway (E70)', 'Surčin', 'Pećinci', 'Belgrade']),
     schemaPitanja(pitanja),
   ]}
 >
   <HeroMali
     jezik="en"
-    naslov="Towing on the Belgrade – Novi Sad motorway & near Belgrade Airport"
-    podnaslov="24/7 towing and roadside assistance. We are based in Stari Banovci, right next to the motorway."
+    naslov="Towing on the Belgrade motorways & near Belgrade Airport"
+    podnaslov="24/7 towing and roadside assistance. We are based in Stari Banovci, between the Belgrade – Novi Sad and Belgrade – Zagreb motorways."
     mrvice={mrvice}
   />
 
@@ -44,6 +44,12 @@ const url = new URL('/en/highway-towing', Astro.site ?? firma.sajt).href;
       <p>
         We most often help on the section of the motorway from Belgrade through Batajnica and Pazova to Inđija. We
         tow cars, vans and motorcycles to a garage or address of your choice.
+      </p>
+
+      <h2 class="naslov-sekcije">Belgrade – Zagreb motorway (E70)</h2>
+      <p>
+        We cover the section from New Belgrade through the Dobanovci interchange and Surčin to the Šimanovci toll
+        station and the Pećinci exit, as well as the Belgrade bypass.
       </p>
 
       <h2 class="naslov-sekcije">If your vehicle breaks down on the motorway</h2>

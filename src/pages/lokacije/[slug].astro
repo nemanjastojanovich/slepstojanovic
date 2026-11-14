@@ -18,7 +18,7 @@ interface Props {
 
 const { lokacija } = Astro.props;
 const naAutoputu = lokacija.grupa === 'Autoput';
-const h1 = naAutoputu ? 'Šlep i pomoć na autoputu Beograd–Novi Sad 0–24h' : `Šlep služba ${lokacija.mesto} 0–24h`;
+const h1 = naAutoputu ? 'Šlep na autoputu Beograd–Novi Sad i Beograd–Zagreb 0–24h' : `Šlep služba ${lokacija.mesto} 0–24h`;
 const okolina = lokacija.okolina
   .map((m) => nadjiLokaciju(m))
   .filter((l): l is Lokacija => Boolean(l) && l?.slug !== lokacija.slug);

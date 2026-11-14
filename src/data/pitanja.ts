@@ -21,6 +21,6 @@ export const pitanjaOpsta: Pitanje[] = [
   },
   {
     pitanje: 'Da li dolazite i na autoput?',
-    odgovor: 'Da, intervenišemo i na autoputu Beograd–Novi Sad, na deonici od Beograda do Inđije.',
+    odgovor: 'Da. Na autoputu Beograd–Novi Sad od Beograda do Inđije, i na autoputu Beograd–Zagreb (E70) od Novog Beograda do Šimanovaca i Pećinaca.',
   },
 ];
