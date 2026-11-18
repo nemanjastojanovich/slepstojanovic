@@ -9,6 +9,8 @@ import platforma from '../assets/slike/slep-stojanovic-slep-vozilo-platforma.jpg
 import pazovaUtovar from '../assets/slike/slep-stojanovic-utovar-autoput-stara-pazova.jpg';
 import noviPazarPrevoz from '../assets/slike/slep-stojanovic-prevoz-vozila-beograd-novi-pazar.jpg';
 import noviPazarIstovar from '../assets/slike/slep-stojanovic-istovar-novi-pazar.jpg';
+import nbg from '../assets/slike/slep-stojanovic-novi-beograd-blok-70.jpg';
+import nbgUtovar from '../assets/slike/slep-stojanovic-novi-beograd-blok-70-utovar.jpg';
 import logo from '../assets/slike/logo-slep-stojanovic.jpg';
 
 type Slika = { src: ImageMetadata; alt: string; opis?: string };
@@ -49,13 +51,25 @@ export const slike = {
     alt: 'Istovar Škode Yeti u Novom Pazaru posle međugradskog prevoza – Šlep Stojanović',
     opis: 'Istovar u Novom Pazaru.',
   },
+  nbg: {
+    src: nbg,
+    alt: 'Šlepanje automobila sa Novog Beograda, Blok 70, do Starih Banovaca – Šlep Stojanović',
+    opis: 'Novi Beograd, Blok 70 → Stari Banovci.',
+  },
+  nbgUtovar: {
+    src: nbgUtovar,
+    alt: 'Automobil utovaren na platformu šlep vozila na Novom Beogradu – Šlep Stojanović',
+    opis: 'Utovar na Novom Beogradu, uveče po kiši.',
+  },
 } satisfies Record<string, Slika>;
 
 export const logoSlika = logo;
 
 export const galerija: Slika[] = [
+  slike.nbg,
   slike.pazovaUtovar,
   slike.noviPazarIstovar,
+  slike.nbgUtovar,
   slike.noviSad,
   slike.noviPazarPrevoz,
   slike.nocna,
