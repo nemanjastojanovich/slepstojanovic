@@ -24,6 +24,7 @@ const mrvice = [
         galerija.map((s) => (
           <figure>
             <Image src={s.src} alt={s.alt} widths={[400, 800]} sizes="(min-width: 860px) 33vw, 100vw" class="zaobljena" />
+            {s.opis && <figcaption>{s.opis}</figcaption>}
           </figure>
         ))
       }
@@ -41,6 +42,11 @@ const mrvice = [
   }
   figure {
     margin: 0;
+  }
+  figcaption {
+    margin-top: 8px;
+    font-size: 0.92rem;
+    color: var(--siva-tekst);
   }
   figure :global(img) {
     width: 100%;

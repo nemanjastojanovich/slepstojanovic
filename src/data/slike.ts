@@ -3,7 +3,15 @@ import automobil from '../assets/slike/slep-stojanovic-prevoz-automobila.jpg';
 import karavan from '../assets/slike/slep-stojanovic-slepovanje-karavana.jpg';
 import havarija from '../assets/slike/slep-stojanovic-slepovanje-havarisanog-vozila.jpg';
 import banovci from '../assets/slike/slep-stojanovic-kamion-stari-banovci.jpg';
+import noviSad from '../assets/slike/slep-stojanovic-nocni-prevoz-indjija-novi-sad.jpg';
+import nocna from '../assets/slike/slep-stojanovic-nocna-intervencija-karavan.jpg';
+import platforma from '../assets/slike/slep-stojanovic-slep-vozilo-platforma.jpg';
+import pazovaUtovar from '../assets/slike/slep-stojanovic-utovar-autoput-stara-pazova.jpg';
+import noviPazarPrevoz from '../assets/slike/slep-stojanovic-prevoz-vozila-beograd-novi-pazar.jpg';
+import noviPazarIstovar from '../assets/slike/slep-stojanovic-istovar-novi-pazar.jpg';
 import logo from '../assets/slike/logo-slep-stojanovic.jpg';
+
+type Slika = { src: ImageMetadata; alt: string; opis?: string };
 
 export const slike = {
   bok: { src: bok, alt: 'Šlep vozilo Šlep Stojanović sa brojem telefona 063 55 85 81' },
@@ -11,8 +19,50 @@ export const slike = {
   karavan: { src: karavan, alt: 'Šlepanje belog karavana – Šlep Stojanović' },
   havarija: { src: havarija, alt: 'Šlepanje neispravnog automobila na platformi' },
   banovci: { src: banovci, alt: 'Šlep vozilo Šlep Stojanović u Starim Banovcima' },
-};
+  noviSad: {
+    src: noviSad,
+    alt: 'Noćni prevoz automobila u kvaru od Inđije do Novog Sada – Šlep Stojanović',
+    opis: 'Noćna intervencija: kvar kod Inđije, vozilo prevezeno do Novog Sada.',
+  },
+  nocna: {
+    src: nocna,
+    alt: 'Noćno šlepanje karavana na platformi šlep vozila Šlep Stojanović',
+    opis: 'Noćno šlepanje karavana – radimo 0–24h.',
+  },
+  platforma: {
+    src: platforma,
+    alt: 'Šlep vozilo sa platformom Šlep Stojanović iz Starih Banovaca',
+    opis: 'Naše šlep vozilo sa platformom, Stari Banovci.',
+  },
+  pazovaUtovar: {
+    src: pazovaUtovar,
+    alt: 'Utovar Škode Yeti na šlep vozilo na autoputu kod Stare Pazove – Šlep Stojanović',
+    opis: 'Utovar na autoputu kod Stare Pazove – vozilo ide za Novi Pazar.',
+  },
+  noviPazarPrevoz: {
+    src: noviPazarPrevoz,
+    alt: 'Međugradski prevoz vozila na relaciji Beograd – Novi Pazar, Šlep Stojanović',
+    opis: 'Međugradski prevoz vozila: Beograd – Novi Pazar.',
+  },
+  noviPazarIstovar: {
+    src: noviPazarIstovar,
+    alt: 'Istovar Škode Yeti u Novom Pazaru posle međugradskog prevoza – Šlep Stojanović',
+    opis: 'Istovar u Novom Pazaru.',
+  },
+} satisfies Record<string, Slika>;
 
 export const logoSlika = logo;
 
-export const galerija = [slike.automobil, slike.karavan, slike.havarija, slike.bok, slike.banovci];
+export const galerija: Slika[] = [
+  slike.pazovaUtovar,
+  slike.noviPazarIstovar,
+  slike.noviSad,
+  slike.noviPazarPrevoz,
+  slike.nocna,
+  slike.platforma,
+  slike.automobil,
+  slike.karavan,
+  slike.havarija,
+  slike.bok,
+  slike.banovci,
+];

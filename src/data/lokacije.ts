@@ -191,7 +191,7 @@ export const lokacije: Lokacija[] = [
       'Radimo u celoj opštini Surčin – u samom Surčinu, Jakovu, Bečmenu, Boljevcima i Progaru, kao i na putevima oko aerodroma Nikola Tesla.',
       'Vozilo iz Surčina prevozimo do servisa na Novom Beogradu, u Zemunu ili Sremu, a po dogovoru i dalje po Srbiji.',
     ],
-    okolina: ['Dobanovci', 'Novi Beograd', 'Zemun', 'Ugrinovci'],
+    okolina: ['Dobanovci', 'Pećinci i Šimanovci', 'Novi Beograd', 'Zemun', 'Ugrinovci'],
     grupa: 'Beograd',
   },
   {
@@ -205,7 +205,7 @@ export const lokacije: Lokacija[] = [
       'Dobanovci su na raskrsnici važnih puteva – kod petlje Dobanovci se spajaju autoput prema Šidu i obilaznica oko Beograda. Zato ovde često ima kvarova i zastoja.',
       'Šlepujemo vozila iz naselja, iz industrijske zone i sa prilaza petlji, i prevozimo ih do servisa u Surčinu, Zemunu, Beogradu ili Sremu.',
     ],
-    okolina: ['Surčin', 'Ugrinovci', 'Batajnica', 'Novi Beograd'],
+    okolina: ['Surčin', 'Ugrinovci', 'Pećinci i Šimanovci', 'Batajnica', 'Novi Beograd'],
     grupa: 'Beograd',
   },
   {
@@ -223,6 +223,20 @@ export const lokacije: Lokacija[] = [
     grupa: 'Srem',
   },
   {
+    slug: 'pecinci-simanovci',
+    mesto: 'Pećinci i Šimanovci',
+    uMestu: 'u Pećincima i Šimanovcima',
+    title: 'Šlep služba Pećinci i Šimanovci 0–24h | Šlep Stojanović',
+    description:
+      'Šlep služba Pećinci i Šimanovci – šlepanje vozila i pomoć na putu 0–24h, i na autoputu Beograd–Zagreb (E70). Pozovite 063 55 85 81.',
+    tekst: [
+      'Pokrivamo Šimanovce, Pećince, Popince i okolna mesta u opštini Pećinci, kao i deonicu autoputa Beograd–Zagreb (E70) od petlje Dobanovci do naplatne stanice Šimanovci i izlaza za Pećince.',
+      'Šlepujemo vozila iz naselja, iz industrijske zone u Šimanovcima, sa magistralnog puta i sa autoputa, i prevozimo ih do servisa u Pećincima, Sremu ili Beogradu, ili do adrese koju vi odredite.',
+    ],
+    okolina: ['Dobanovci', 'Surčin', 'Ugrinovci', 'Vojka'],
+    grupa: 'Srem',
+  },
+  {
     slug: 'autoput-beograd-novi-sad',
     mesto: 'Autoput Beograd–Novi Sad i Beograd–Zagreb',
     uMestu: 'na autoputu Beograd–Novi Sad i Beograd–Zagreb',
@@ -234,7 +248,7 @@ export const lokacije: Lokacija[] = [
       'Na autoputu Beograd–Zagreb (E70) pokrivamo deonicu od Novog Beograda, preko petlje Dobanovci i Surčina, do naplatne stanice Šimanovci i izlaza za Pećince. Dolazimo i na obilaznicu oko Beograda.',
       'Ako vam vozilo stane na autoputu: uključite sva četiri pokazivača pravca, obucite prsluk, postavite trougao i sklonite se iza zaštitne ograde. Zatim nas pozovite i recite smer i približno mesto (najbliži izlaz ili kilometar).',
     ],
-    okolina: ['Batajnica', 'Nova Pazova', 'Inđija', 'Dobanovci', 'Surčin'],
+    okolina: ['Batajnica', 'Nova Pazova', 'Inđija', 'Dobanovci', 'Pećinci i Šimanovci'],
     grupa: 'Autoput',
   },
 ];

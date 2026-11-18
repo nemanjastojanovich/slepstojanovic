@@ -17,7 +17,7 @@ export const pitanjaOpsta: Pitanje[] = [
   {
     pitanje: 'Šta sve prevozite?',
     odgovor:
-      'Automobile, kombije, motore, neispravna i havarisana vozila, kao i manju mehanizaciju i teret koji staje na platformu.',
+      'Automobile, kombije, SUV vozila i motore, neispravna i havarisana vozila, kao i traktore, mehanizaciju i teret koji staje na platformu.',
   },
   {
     pitanje: 'Da li dolazite i na autoput?',

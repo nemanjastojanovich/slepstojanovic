@@ -116,13 +116,13 @@ export const usluge: Usluga[] = [
   {
     slug: 'transport-mehanizacije',
     naziv: 'Transport tereta i mehanizacije',
-    kratko: 'Prevoz traktora, poljoprivrednih mašina, manje mehanizacije i tereta na platformi.',
-    title: 'Transport tereta i mehanizacije | Šlep Stojanović',
+    kratko: 'Prevoz traktora, poljoprivrednih mašina, mehanizacije i tereta na platformi.',
+    title: 'Transport tereta, mehanizacije i traktora | Šlep Stojanović',
     description:
-      'Prevoz traktora, poljoprivrednih mašina, manje mehanizacije i tereta na platformi – Srem, Beograd, Srbija i Evropa. Šlep Stojanović, 063 55 85 81.',
+      'Prevoz traktora, poljoprivrednih mašina, mini bagera i mehanizacije na platformi – Srem, Beograd, Srbija i Evropa. Šlep Stojanović, 063 55 85 81.',
     h1: 'Transport tereta i mehanizacije',
     uvod:
-      'Osim vozila, na platformi prevozimo i traktore, poljoprivredne mašine, manju mehanizaciju i drugi teret – po Sremu, Beogradu, Srbiji i Evropi.',
+      'Osim vozila, na platformi prevozimo i traktore, poljoprivredne mašine, mini bagere, mehanizaciju i drugi teret – po Sremu, Beogradu, Srbiji i Evropi.',
     sekcije: [
       {
         naslov: 'Šta možemo da prevezemo',
@@ -134,8 +134,8 @@ export const usluge: Usluga[] = [
     lista: {
       naslov: 'Primeri tereta',
       stavke: [
-        'Manja građevinska mehanizacija',
-        'Traktori',
+        'Mini bageri i građevinska mehanizacija',
+        'Traktori i motokultivatori',
         'Poljoprivredne mašine',
         'Viljuškari',
         'Prikolice i kamp prikolice',

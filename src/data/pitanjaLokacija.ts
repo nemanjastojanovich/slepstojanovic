@@ -25,7 +25,7 @@ export const pitanjaLokacija: Record<string, Pitanje[]> = {
   ],
   'stara-pazova': [
     { pitanje: 'Pokrivate li sela u opštini Stara Pazova?', odgovor: 'Da, radimo u celoj opštini – Stara i Nova Pazova, Stari i Novi Banovci, Belegiš, Surduk, Golubinci, Krnješevci i Vojka.' },
-    { pitanje: 'Možete li da prevezete traktor ili poljoprivrednu mašinu?', odgovor: 'Da, prevozimo traktore, poljoprivredne mašine i manju mehanizaciju koja staje na platformu. Pre dolaska nam recite tip i približnu težinu mašine.' },
+    { pitanje: 'Možete li da prevezete traktor ili poljoprivrednu mašinu?', odgovor: 'Da, prevozimo traktore, poljoprivredne mašine i mehanizaciju koja staje na platformu. Pre dolaska nam recite tip i približnu težinu mašine.' },
     { pitanje: 'Kako da vam pošaljem lokaciju?', odgovor: 'Preko Vibera ili WhatsApp-a na 063 55 85 81 – podelite trenutnu lokaciju i odmah znamo gde se nalazite.' },
   ],
   indjija: [
@@ -70,13 +70,18 @@ export const pitanjaLokacija: Record<string, Pitanje[]> = {
   ],
   dobanovci: [
     { pitanje: 'Da li dolazite na petlju Dobanovci i obilaznicu?', odgovor: 'Da, dolazimo na prilaze petlji i na obilaznicu oko Beograda. Pri pozivu recite smer i najbliži izlaz ili kilometar.' },
-    { pitanje: 'Da li šlepujete kombije iz industrijske zone?', odgovor: 'Da, prevozimo kombije i laka dostavna vozila koja staju na platformu, kao i automobile.' },
+    { pitanje: 'Da li šlepujete kombije iz industrijske zone?', odgovor: 'Da, prevozimo kombije i laka dostavna vozila, kao i automobile.' },
     { pitanje: 'Radite li noću?', odgovor: 'Da, radimo 0–24h, svakog dana, uključujući vikende i praznike.' },
   ],
   vojka: [
     { pitanje: 'Da li iz Vojke prevozite traktore?', odgovor: 'Da, prevozimo traktore i poljoprivredne mašine koje staju na platformu. Pre dolaska nam recite tip i približnu težinu mašine.' },
     { pitanje: 'Da li dolazite preko Beograda?', odgovor: 'Ne, iz Banovaca dolazimo preko Nove Pazove, bez obilaska kroz Beograd.' },
     { pitanje: 'Gde vozite vozilo iz Vojke?', odgovor: 'Do servisa u Novoj ili Staroj Pazovi, u Inđiji ili Beogradu, ili do adrese koju vi odredite.' },
+  ],
+  'pecinci-simanovci': [
+    { pitanje: 'Da li dolazite na autoput kod Šimanovaca?', odgovor: 'Da, na autoputu Beograd–Zagreb (E70) dolazimo do naplatne stanice Šimanovci i izlaza za Pećince. Pri pozivu recite smer i najbliži izlaz ili kilometar sa table pored puta.' },
+    { pitanje: 'Da li radite u industrijskoj zoni u Šimanovcima?', odgovor: 'Da, šlepujemo vozila iz industrijske zone, sa parkinga firmi i iz dvorišta skladišta.' },
+    { pitanje: 'Gde možete da odvezete vozilo iz Pećinaca ili Šimanovaca?', odgovor: 'Do servisa u Pećincima, Šimanovcima, Pazovi, Surčinu ili Beogradu, ili do vaše adrese. Po dogovoru vozimo i dalje po Srbiji.' },
   ],
   'autoput-beograd-novi-sad': [
     { pitanje: 'Koje deonice autoputa pokrivate?', odgovor: 'Autoput Beograd–Novi Sad od Beograda do Inđije, i autoput Beograd–Zagreb (E70) od Novog Beograda, preko Dobanovaca i Surčina, do naplatne stanice Šimanovci i izlaza za Pećince. Dolazimo i na obilaznicu oko Beograda.' },
