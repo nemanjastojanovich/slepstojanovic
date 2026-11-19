@@ -13,6 +13,7 @@ import nbg from '../assets/slike/slep-stojanovic-novi-beograd-blok-70.jpg';
 import nbgUtovar from '../assets/slike/slep-stojanovic-novi-beograd-blok-70-utovar.jpg';
 import kanal from '../assets/slike/slep-stojanovic-indjija-izvlacenje-iz-kanala-1.jpg';
 import kanalUtovar from '../assets/slike/slep-stojanovic-indjija-izvuceno-vozilo-1.jpg';
+import kombiUgrinovci from '../assets/slike/slep-stojanovic-ugrinovci-kombi.jpg';
 import logo from '../assets/slike/logo-slep-stojanovic.jpg';
 
 type Slika = { src: ImageMetadata; alt: string; opis?: string };
@@ -73,12 +74,18 @@ export const slike = {
     alt: 'Automobil izvučen iz kanala i utovaren na šlep vozilo u Inđiji – Šlep Stojanović',
     opis: 'Isto vozilo, izvučeno i utovareno na platformu.',
   },
+  kombiUgrinovci: {
+    src: kombiUgrinovci,
+    alt: 'Šlepanje pokvarenog kombija od isključenja sa autoputa kod Ikarbusa do Ugrinovaca – Šlep Stojanović',
+    opis: 'Kombi u kvaru: isključenje sa autoputa kod Ikarbusa → Ugrinovci.',
+  },
 } satisfies Record<string, Slika>;
 
 export const logoSlika = logo;
 
 export const galerija: Slika[] = [
   slike.kanal,
+  slike.kombiUgrinovci,
   slike.nbg,
   slike.pazovaUtovar,
   slike.kanalUtovar,
