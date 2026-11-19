@@ -11,6 +11,8 @@ import noviPazarPrevoz from '../assets/slike/slep-stojanovic-prevoz-vozila-beogr
 import noviPazarIstovar from '../assets/slike/slep-stojanovic-istovar-novi-pazar.jpg';
 import nbg from '../assets/slike/slep-stojanovic-novi-beograd-blok-70.jpg';
 import nbgUtovar from '../assets/slike/slep-stojanovic-novi-beograd-blok-70-utovar.jpg';
+import kanal from '../assets/slike/slep-stojanovic-indjija-izvlacenje-iz-kanala-1.jpg';
+import kanalUtovar from '../assets/slike/slep-stojanovic-indjija-izvuceno-vozilo-1.jpg';
 import logo from '../assets/slike/logo-slep-stojanovic.jpg';
 
 type Slika = { src: ImageMetadata; alt: string; opis?: string };
@@ -61,13 +63,25 @@ export const slike = {
     alt: 'Automobil utovaren na platformu šlep vozila na Novom Beogradu – Šlep Stojanović',
     opis: 'Utovar na Novom Beogradu, uveče po kiši.',
   },
+  kanal: {
+    src: kanal,
+    alt: 'Izvlačenje automobila iz kanala sa vodom u Inđiji – Šlep Stojanović',
+    opis: 'Inđija: izvlačenje automobila iz kanala pod vodom, noću.',
+  },
+  kanalUtovar: {
+    src: kanalUtovar,
+    alt: 'Automobil izvučen iz kanala i utovaren na šlep vozilo u Inđiji – Šlep Stojanović',
+    opis: 'Isto vozilo, izvučeno i utovareno na platformu.',
+  },
 } satisfies Record<string, Slika>;
 
 export const logoSlika = logo;
 
 export const galerija: Slika[] = [
+  slike.kanal,
   slike.nbg,
   slike.pazovaUtovar,
+  slike.kanalUtovar,
   slike.noviPazarIstovar,
   slike.nbgUtovar,
   slike.noviSad,

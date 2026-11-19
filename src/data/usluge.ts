@@ -97,7 +97,7 @@ export const usluge: Usluga[] = [
         'Kvar motora ili menjača',
         'Pukla guma ili oštećen točak',
         'Saobraćajna nezgoda',
-        'Vozilo sletelo sa puta',
+        'Vozilo sletelo sa puta ili u kanal – izvlačimo ga vitlom',
         'Kvar na autoputu',
       ],
     },
