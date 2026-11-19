@@ -1,0 +1,224 @@
+---
+import Osnovni from '../layouts/Osnovni.astro';
+import HeroMali from '../components/HeroMali.astro';
+import KontaktDugmad from '../components/KontaktDugmad.astro';
+import CtaTraka from '../components/CtaTraka.astro';
+import Faq from '../components/Faq.astro';
+import { firma } from '../data/firma';
+import { schemaFirma, schemaPitanja } from '../data/schema';
+
+const mrvice = [
+  { naziv: 'Početna', url: '/' },
+  { naziv: 'Cenovnik', url: '/cenovnik' },
+];
+
+const cene = [
+  {
+    usluga: 'Lokalni šlep',
+    opis: 'Stari i Novi Banovci, Nova i Stara Pazova, Belegiš',
+    cena: 'od 4.000 din',
+  },
+  {
+    usluga: 'Duže relacije',
+    opis: 'Beograd, Srem, Novi Sad i cela Srbija',
+    cena: '80 din / km',
+  },
+  {
+    usluga: 'Izvlačenje iz blata, jarka ili kanala',
+    opis: 'plitak kanal, vozilo lako dostupno',
+    cena: 'od 4.500 din',
+  },
+  {
+    usluga: 'Otežan utovar',
+    opis: 'vozilo bez ključa, blokiran volan ili menjač, uska garaža, sneg ili led – utovarujemo pomoću hidrauličnih kolica',
+    cena: 'po dogovoru',
+  },
+  {
+    usluga: 'Noć (22–06h), vikend i praznik',
+    opis: 'dodatak na osnovnu cenu',
+    cena: '+25%',
+  },
+  {
+    usluga: 'Putarina i mostarina',
+    opis: 'naplaćuju se po stvarnom trošku',
+    cena: 'posebno',
+  },
+];
+
+const primeri = [
+  { relacija: 'Stari Banovci → servis u Novoj Pazovi', cena: 'od 4.000 din' },
+  { relacija: 'Belegiš → Stara Pazova', cena: 'od 4.000 din' },
+  { relacija: 'Inđija → Novi Sad', cena: 'oko 10.500 din' },
+];
+
+const pitanja = [
+  {
+    pitanje: 'Da li se cena menja kada dođete?',
+    odgovor:
+      'Ne. Cenu vam kažemo telefonom pre polaska. Menja se samo ako se situacija na terenu bitno razlikuje od opisane – na primer ako je vozilo dublje u kanalu nego što je rečeno – i tada se prvo dogovorimo, pa tek onda radimo.',
+  },
+  {
+    pitanje: 'Kako računate cenu za duže relacije?',
+    odgovor:
+      'Računamo ukupne pređene kilometre: od Starih Banovaca do vozila, od vozila do odredišta i povratak, po 80 dinara po kilometru.',
+  },
+  {
+    pitanje: 'Koliko košta izvlačenje vozila iz blata ili kanala?',
+    odgovor:
+      'Ako je kanal plitak i vozilo lako dostupno, izvlačenje vitlom je od 4.500 dinara. Ako je vozilo dublje u kanalu ili u vodi, cenu dogovaramo kada vidimo situaciju – pošaljite nam sliku preko Vibera ili WhatsApp-a.',
+  },
+  {
+    pitanje: 'Možete li da utovarite vozilo bez ključa ili sa blokiranim točkovima?',
+    odgovor:
+      'Da. Imamo hidraulična kolica koja se podmeću ispod blokiranih točkova, pa vozilo utovarujemo bez pokretanja volana i menjača i bez oštećenja. Pri preuzimanju vozila bez ključa tražimo saobraćajnu dozvolu i ličnu kartu vlasnika.',
+  },
+  {
+    pitanje: 'A prevoz u druge gradove ili u inostranstvo?',
+    odgovor: 'Za duže relacije po Srbiji i za prevoz iz inostranstva pozovite nas – cenu dogovaramo za konkretnu rutu.',
+  },
+];
+---
+
+<Osnovni
+  title="Cenovnik šlep usluga – Banovci, Pazova, Beograd | Šlep Stojanović"
+  description="Cene šlepa: lokalno (Banovci, Pazova, Belegiš) od 4.000 din, duže relacije 80 din/km, izvlačenje iz blata od 4.500 din. Tačnu cenu kažemo pre polaska: 063 55 85 81."
+  mrvice={mrvice}
+  schema={[schemaFirma(), schemaPitanja(pitanja)]}
+>
+  <HeroMali
+    naslov="Cenovnik"
+    podnaslov="Tačnu cenu kažemo telefonom pre polaska – bez iznenađenja na licu mesta."
+    mrvice={mrvice}
+  />
+
+  <section class="sekcija">
+    <div class="kontejner uzi">
+      <h2>Osnovne cene</h2>
+      <table class="cenovnik">
+        <tbody>
+          {
+            cene.map((c) => (
+              <tr>
+                <th scope="row">
+                  {c.usluga}
+                  <span>{c.opis}</span>
+                </th>
+                <td>{c.cena}</td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+      <p class="napomena">
+        U cenu su uključeni dolazak do vozila, utovar, pričvršćivanje i prevoz do odredišta.
+      </p>
+
+      <h2>Primeri</h2>
+      <table class="cenovnik">
+        <tbody>
+          {
+            primeri.map((p) => (
+              <tr>
+                <th scope="row">{p.relacija}</th>
+                <td>{p.cena}</td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+      <p class="napomena">Okvirne cene za radni dan danju. Za noć, vikend i praznik dodaje se 25%.</p>
+
+      <h2>Po dogovoru</h2>
+      <ul class="lista-tacke">
+        <li>Duže relacije po Srbiji</li>
+        <li>Prevoz vozila iz inostranstva i u inostranstvo</li>
+        <li>Vozila dublje u kanalu ili vodi</li>
+        <li>Kombiji, traktori, mehanizacija i teret</li>
+      </ul>
+
+      <div class="poziv">
+        <p>Pozovite <a href={firma.telefonLink}>{firma.telefon}</a> ili pošaljite lokaciju – reći ćemo vam tačnu cenu.</p>
+        <KontaktDugmad />
+      </div>
+    </div>
+  </section>
+
+  <section class="sekcija sekcija--siva">
+    <div class="kontejner uzi">
+      <Faq pitanja={pitanja} naslov="Pitanja o ceni" />
+    </div>
+  </section>
+
+  <CtaTraka />
+</Osnovni>
+
+<style>
+  .uzi {
+    max-width: 820px;
+  }
+  h2 {
+    margin-top: 32px;
+  }
+  h2:first-child {
+    margin-top: 0;
+  }
+  .cenovnik {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  }
+  .cenovnik th,
+  .cenovnik td {
+    padding: 14px 16px;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+    vertical-align: top;
+  }
+  .cenovnik tr:last-child th,
+  .cenovnik tr:last-child td {
+    border-bottom: 0;
+  }
+  .cenovnik th {
+    font-weight: 700;
+  }
+  .cenovnik th span {
+    display: block;
+    font-weight: 400;
+    font-size: 0.92rem;
+    color: var(--siva-tekst);
+    margin-top: 2px;
+  }
+  .cenovnik td {
+    text-align: right;
+    white-space: nowrap;
+    font-weight: 800;
+    color: var(--crvena);
+  }
+  .napomena {
+    font-size: 0.95rem;
+    color: var(--siva-tekst);
+    margin-top: 10px;
+  }
+  .poziv {
+    margin-top: 32px;
+    padding: 20px;
+    border-radius: 12px;
+    background: var(--siva);
+  }
+  .poziv a {
+    font-weight: 800;
+    color: var(--crvena);
+  }
+  @media (max-width: 600px) {
+    .cenovnik th,
+    .cenovnik td {
+      padding: 12px;
+    }
+    .cenovnik td {
+      font-size: 0.95rem;
+    }
+  }
+</style>

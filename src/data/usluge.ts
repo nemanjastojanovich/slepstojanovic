@@ -48,6 +48,7 @@ export const usluge: Usluga[] = [
         'Motocikle i skutere',
         'Neispravna i havarisana vozila',
         'Neregistrovana vozila',
+        'Vozila bez ključa, sa zaključanim volanom ili blokiranim točkovima',
         'Oldtajmere i vozila koja ne smeju da se vuku',
         'Vozila do servisa ili na tehnički pregled',
       ],
@@ -56,6 +57,11 @@ export const usluge: Usluga[] = [
       {
         pitanje: 'Da li šlepujete neregistrovana vozila?',
         odgovor: 'Da. Neregistrovano vozilo prevozimo na platformi, pa nije potrebno da bude registrovano za vožnju.',
+      },
+      {
+        pitanje: 'Možete li da prevezete vozilo bez ključa?',
+        odgovor:
+          'Da. Vozilo sa zaključanim volanom, blokiranim menjačem ili ručnom kočnicom utovarujemo pomoću hidrauličnih kolica za točkove, bez oštećenja. Pri preuzimanju tražimo saobraćajnu dozvolu i ličnu kartu vlasnika.',
       },
       {
         pitanje: 'Da li mogu da se vozim u šlep vozilu?',
