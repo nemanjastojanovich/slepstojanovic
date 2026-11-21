@@ -83,7 +83,7 @@ export const slike = {
   madjarska: {
     src: madjarska,
     alt: 'Prevoz automobila iz Mađarske (Segedin, kod Horgoša) do Zemuna – Šlep Stojanović',
-    opis: 'Mađarska, kod Segedina → Zemun: noćni prevoz vozila iz inostranstva.',
+    opis: 'Mađarska, kod Segedina → Zemun: noćni prevoz automobila iz inostranstva.',
   },
 } satisfies Record<string, Slika>;
 
