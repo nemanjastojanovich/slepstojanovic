@@ -14,6 +14,7 @@ import nbgUtovar from '../assets/slike/slep-stojanovic-novi-beograd-blok-70-utov
 import kanal from '../assets/slike/slep-stojanovic-indjija-izvlacenje-iz-kanala-1.jpg';
 import kanalUtovar from '../assets/slike/slep-stojanovic-indjija-izvuceno-vozilo-1.jpg';
 import kombiUgrinovci from '../assets/slike/slep-stojanovic-ugrinovci-kombi.jpg';
+import madjarska from '../assets/slike/slep-stojanovic-madjarska-zemun.jpg';
 import logo from '../assets/slike/logo-slep-stojanovic.jpg';
 
 type Slika = { src: ImageMetadata; alt: string; opis?: string };
@@ -79,11 +80,17 @@ export const slike = {
     alt: 'Šlepanje pokvarenog kombija od isključenja sa autoputa kod Ikarbusa do Ugrinovaca – Šlep Stojanović',
     opis: 'Kombi u kvaru: isključenje sa autoputa kod Ikarbusa → Ugrinovci.',
   },
+  madjarska: {
+    src: madjarska,
+    alt: 'Prevoz automobila iz Mađarske (Segedin, kod Horgoša) do Zemuna – Šlep Stojanović',
+    opis: 'Mađarska, kod Segedina → Zemun: noćni prevoz vozila iz inostranstva.',
+  },
 } satisfies Record<string, Slika>;
 
 export const logoSlika = logo;
 
 export const galerija: Slika[] = [
+  slike.madjarska,
   slike.kanal,
   slike.kombiUgrinovci,
   slike.nbg,
