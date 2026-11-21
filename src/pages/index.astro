@@ -38,6 +38,13 @@ const grupe = ['Srem', 'Beograd', 'Autoput'] as const;
       <div class="hero__tekst">
         <p class="hero__nadnaslov">Šlep Stojanović · Stari Banovci</p>
         <h1>Šlep služba i pomoć na putu <span>0–24h</span></h1>
+        <div class="autoput-traka">
+          <p>
+            <strong>🚨 Stali ste na autoputu?</strong> Beograd–Novi Sad ili Beograd–Zagreb – pozovite
+            <a href={firma.telefonLink}>{firma.telefon}</a> ili pošaljite lokaciju.
+          </p>
+          <a class="autoput-traka__vise" href="/lokacije/autoput-beograd-novi-sad">Više o šlepu na autoputu →</a>
+        </div>
         <p class="hero__opis">
           Šlepanje automobila, kombija i motora posle kvara ili udesa, pomoć na putu i autoputu, prevoz traktora,
           poljoprivrednih mašina i mehanizacije, i prevoz vozila po Srbiji i iz Evrope. Pozovite ili pošaljite lokaciju preko
@@ -202,6 +209,29 @@ const grupe = ['Srem', 'Beograd', 'Autoput'] as const;
   .hero h1 span {
     color: #ff4a55;
     white-space: nowrap;
+  }
+  .autoput-traka {
+    margin: 0 0 22px;
+    padding: 14px 16px;
+    border-radius: var(--radius);
+    background: rgb(255 255 255 / 0.1);
+    border-left: 4px solid #ff4a55;
+    max-width: 560px;
+  }
+  .autoput-traka p {
+    margin: 0 0 6px;
+    font-size: 1.02rem;
+    color: var(--bela);
+  }
+  .autoput-traka a {
+    color: var(--bela);
+    font-weight: 800;
+    white-space: nowrap;
+  }
+  .autoput-traka__vise {
+    font-size: 0.95rem;
+    text-decoration: underline;
+    font-weight: 600 !important;
   }
   .hero__opis {
     font-size: 1.1rem;
