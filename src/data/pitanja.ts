@@ -22,7 +22,7 @@ export const pitanjaOpsta: Pitanje[] = [
   {
     pitanje: 'Da li izdajete račun?',
     odgovor:
-      'Da, za svaku vožnju izdajemo fiskalni račun, koji možete priložiti osiguranju ili firmi. Pravnim licima izdajemo i račun za plaćanje preko računa.',
+      'Da, za svaku vožnju izdajemo fiskalni račun, koji možete priložiti osiguranju ili firmi. Za firme postoji i mogućnost plaćanja preko računa.',
   },
   {
     pitanje: 'Da li dolazite i na autoput?',
