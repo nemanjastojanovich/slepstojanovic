@@ -15,6 +15,7 @@ const pitanja = [
   { pitanje: 'What should I tell you when I call?', odgovor: 'Your direction (towards Belgrade or towards Novi Sad) and the nearest exit, or the kilometre number from the sign by the road. Sharing your location on WhatsApp or Viber is even easier.' },
   { pitanje: 'Where can you take my vehicle?', odgovor: 'To a garage of your choice, to your address or hotel – in Belgrade, Srem, Novi Sad or further within Serbia.' },
   { pitanje: 'I have a rental car. What should I do?', odgovor: 'Contact your rental company first – they often have their own assistance. If they ask you to arrange towing yourself, call or message us.' },
+  { pitanje: 'My car broke down near the border (Horgoš, Batrovci). Can you bring it to Belgrade?', odgovor: 'Yes, by arrangement. It takes us some time to get there, so tell us where you are and where the car should go – we agree the price before we set off.' },
   { pitanje: 'Do you work at night and on weekends?', odgovor: 'Yes, we work 24/7, every day of the year.' },
 ];
 
@@ -22,8 +23,8 @@ const url = new URL('/en/highway-towing', Astro.site ?? firma.sajt).href;
 ---
 
 <Osnovni
-  title="Towing on Belgrade Motorways (E75, E70) & Airport 24/7 | Šlep Stojanović"
-  description="Breakdown on the Belgrade–Novi Sad or Belgrade–Zagreb motorway, or near Belgrade Airport? 24/7 towing from Stari Banovci, between both motorways. We speak English. WhatsApp +381 63 558 581."
+  title="Highway Towing Serbia 24/7 – Belgrade Motorways & Airport | Šlep Stojanović"
+  description="Highway towing in Serbia 24/7: Belgrade–Novi Sad (E75) and Belgrade–Zagreb (E70) motorways, Belgrade Airport, transport from the Hungarian and Croatian border. We speak English. WhatsApp +381 63 558 581."
   mrvice={mrvice}
   schema={[
     schemaFirma(),
@@ -33,7 +34,7 @@ const url = new URL('/en/highway-towing', Astro.site ?? firma.sajt).href;
 >
   <HeroMali
     jezik="en"
-    naslov="Towing on the Belgrade motorways & near Belgrade Airport"
+    naslov="Highway towing in Serbia – Belgrade motorways & airport"
     podnaslov="24/7 towing and roadside assistance. We are based in Stari Banovci, between the Belgrade – Novi Sad and Belgrade – Zagreb motorways."
     mrvice={mrvice}
   />
@@ -66,6 +67,14 @@ const url = new URL('/en/highway-towing', Astro.site ?? firma.sajt).href;
         We also work on the roads around Belgrade Nikola Tesla Airport and in Surčin and Dobanovci, including the
         Dobanovci interchange and the Belgrade bypass. Parking areas with controlled entry we can reach only when access
         for a tow truck is allowed.
+      </p>
+
+      <h2 class="naslov-sekcije">Border crossings & longer distances</h2>
+      <p>
+        Broke down further away – near the Hungarian border at Horgoš or the Croatian border at Batrovci – and need your
+        car taken to Belgrade? We can arrange transport by agreement. Recently we brought a car from Hungary, near Szeged,
+        to Belgrade overnight. We agree the price before we set off. See also
+        <a href="/en/car-transport-europe">car transport Serbia – Europe</a>.
       </p>
     </div>
   </section>

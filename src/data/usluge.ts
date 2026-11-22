@@ -11,7 +11,7 @@ export type Usluga = {
   sekcije: { naslov: string; tekst: string[] }[];
   lista: { naslov: string; stavke: string[] };
   pitanja: Pitanje[];
-  slika: 'bok' | 'automobil' | 'karavan' | 'havarija' | 'banovci';
+  slika: 'bok' | 'automobil' | 'karavan' | 'havarija' | 'banovci' | 'madjarska';
 };
 
 export const usluge: Usluga[] = [
@@ -160,19 +160,26 @@ export const usluge: Usluga[] = [
   {
     slug: 'prevoz-srbija-evropa',
     naziv: 'Prevoz po Srbiji i Evropi',
-    kratko: 'Međugradski prevoz vozila i dovoz automobila iz inostranstva.',
-    title: 'Prevoz vozila po Srbiji i Evropi | Šlep Stojanović',
+    kratko: 'Šlepanje vozila u inostranstvo i iz inostranstva, međugradski prevoz po Srbiji.',
+    title: 'Šlepanje vozila u inostranstvo i po Srbiji | Šlep Stojanović',
     description:
-      'Prevoz vozila po celoj Srbiji i Evropi – dovoz automobila iz inostranstva i međugradski šlep. Šlep Stojanović, Stari Banovci: 063 55 85 81.',
-    h1: 'Prevoz vozila po Srbiji i Evropi',
+      'Šlepanje vozila u inostranstvo i iz inostranstva (Mađarska, Hrvatska, EU) i međugradski prevoz po Srbiji. Cena unapred. Šlep Stojanović: 063 55 85 81.',
+    h1: 'Šlepanje vozila u inostranstvo i po Srbiji',
     uvod:
-      'Ne radimo samo lokalno. Vozila prevozimo po celoj Srbiji i po Evropi – od međugradskog šlepa do dovoza automobila iz inostranstva.',
+      'Ne radimo samo lokalno. Šlepujemo vozila u inostranstvo i iz inostranstva i prevozimo ih po celoj Srbiji – od međugradskog šlepa do dovoza automobila iz Evrope.',
     sekcije: [
       {
         naslov: 'Dovoz automobila iz inostranstva',
         tekst: [
           'Kupili ste automobil u inostranstvu ili vam je vozilo ostalo u kvaru van Srbije? Dogovorite sa nama prevoz – preuzimamo vozilo i dovozimo ga na adresu koju odredite.',
           'Za prevoz iz inostranstva javite nam se unapred, da dogovorimo termin i papire potrebne za prelazak granice.',
+        ],
+      },
+      {
+        naslov: 'Primer: iz Mađarske do Zemuna',
+        tekst: [
+          'Vozilo je stalo na putu ka Srbiji, oko 30 km posle graničnog prelaza Horgoš, kod Segedina. Preuzeli smo ga na pumpi, utovarili na platformu i iste noći bezbedno dovezli do Zemuna.',
+          'Ako vam se vozilo pokvari u inostranstvu ili blizu granice (Horgoš, Kelebija, Batrovci), a treba da stigne do Beograda ili Srema, javite se – dogovaramo termin i cenu pre polaska.',
         ],
       },
       {
@@ -186,8 +193,9 @@ export const usluge: Usluga[] = [
       naslov: 'Najčešće rute',
       stavke: [
         'Srem i Beograd ↔ cela Srbija',
+        'Mađarska, Hrvatska i zemlje regiona ↔ Beograd i Srem',
+        'Granični prelazi Horgoš, Kelebija i Batrovci',
         'Dovoz vozila iz zemalja EU',
-        'Zemlje regiona',
         'Vraćanje vozila ostalog u kvaru u inostranstvu',
       ],
     },
@@ -196,7 +204,11 @@ export const usluge: Usluga[] = [
         pitanje: 'Da li prevozite vozila iz Nemačke, Austrije i drugih zemalja?',
         odgovor: 'Da, prevozimo vozila iz zemalja Evrope. Javite nam se unapred da dogovorimo termin.',
       },
+      {
+        pitanje: 'Koliko košta šlepanje vozila u inostranstvo?',
+        odgovor: 'Cena zavisi od ukupne kilometraže, putarina i prelaska granice. Pošaljite nam odakle i dokle treba da se preveze vozilo, pa vam kažemo tačnu cenu pre polaska.',
+      },
     ],
-    slika: 'automobil',
+    slika: 'madjarska',
   },
 ];
