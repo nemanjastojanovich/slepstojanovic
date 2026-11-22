@@ -20,6 +20,11 @@ export const pitanjaOpsta: Pitanje[] = [
       'Automobile, kombije, SUV vozila i motore, neispravna i havarisana vozila, kao i traktore, mehanizaciju i teret koji staje na platformu.',
   },
   {
+    pitanje: 'Da li izdajete račun?',
+    odgovor:
+      'Da, za svaku vožnju izdajemo fiskalni račun, koji možete priložiti osiguranju ili firmi. Pravnim licima izdajemo i račun za plaćanje preko računa.',
+  },
+  {
     pitanje: 'Da li dolazite i na autoput?',
     odgovor: 'Da. Na autoputu Beograd–Novi Sad od Beograda do Inđije, i na autoputu Beograd–Zagreb (E70) od Novog Beograda do Šimanovaca i Pećinaca.',
   },
