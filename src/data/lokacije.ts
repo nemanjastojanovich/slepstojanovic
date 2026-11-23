@@ -240,7 +240,7 @@ export const lokacije: Lokacija[] = [
     slug: 'autoput-beograd-novi-sad',
     mesto: 'Autoput Beograd–Novi Sad i Beograd–Zagreb',
     uMestu: 'na autoputu Beograd–Novi Sad i Beograd–Zagreb',
-    title: 'Šlep na autoputu BG–Novi Sad i BG–Zagreb 0–24h | Šlep Stojanović',
+    title: 'Šlep služba na autoputu BG–Novi Sad i BG–Zagreb 0–24h | Šlep Stojanović',
     description:
       'Kvar na autoputu? Šlep i pomoć na putu 0–24h: Beograd–Novi Sad do Inđije i Beograd–Zagreb (E70) do Pećinaca. Pozovite 063 55 85 81.',
     tekst: [
