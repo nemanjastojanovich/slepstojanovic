@@ -15,6 +15,7 @@ import kanal from '../assets/slike/slep-stojanovic-indjija-izvlacenje-iz-kanala-
 import kanalUtovar from '../assets/slike/slep-stojanovic-indjija-izvuceno-vozilo-1.jpg';
 import kombiUgrinovci from '../assets/slike/slep-stojanovic-ugrinovci-kombi.jpg';
 import madjarska from '../assets/slike/slep-stojanovic-madjarska-zemun.jpg';
+import zemunMetro from '../assets/slike/slep-stojanovic-zemun-metro-nova-pazova.jpg';
 import logo from '../assets/slike/logo-slep-stojanovic.jpg';
 
 type Slika = { src: ImageMetadata; alt: string; opis?: string };
@@ -85,18 +86,24 @@ export const slike = {
     alt: 'Prevoz automobila iz Mađarske (Segedin, kod Horgoša) do Zemuna – Šlep Stojanović',
     opis: 'Mađarska, kod Segedina → Zemun: noćni prevoz automobila iz inostranstva.',
   },
+  zemunMetro: {
+    src: zemunMetro,
+    alt: 'Šlepanje automobila sa parkinga Metroa na Novosadskom putu u Zemunu do Nove Pazove – Šlep Stojanović',
+    opis: 'Zemun, parking Metroa na Novosadskom putu → Nova Pazova: prevoz neispravnog automobila do kuće vlasnika.',
+  },
 } satisfies Record<string, Slika>;
 
 export const logoSlika = logo;
 
 export const galerija: Slika[] = [
+  slike.noviPazarIstovar,
   slike.madjarska,
   slike.kanal,
+  slike.zemunMetro,
   slike.kombiUgrinovci,
   slike.nbg,
   slike.pazovaUtovar,
   slike.kanalUtovar,
-  slike.noviPazarIstovar,
   slike.nbgUtovar,
   slike.noviSad,
   slike.noviPazarPrevoz,
