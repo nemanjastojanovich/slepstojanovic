@@ -92,7 +92,7 @@ export const usluge: Usluga[] = [
       {
         naslov: 'Pomoć na autoputu',
         tekst: [
-          'Stari Banovci su između dva autoputa, pa dežuramo na autoputu Beograd–Novi Sad (od Beograda do Inđije) i na autoputu Beograd–Zagreb (od Novog Beograda, preko Dobanovaca, do Šimanovaca i Pećinaca).',
+          'Stari Banovci su između dva autoputa, pa najbrže stižemo na autoput Beograd–Novi Sad (Batajnica, Pazova, Inđija) i na autoput Beograd–Zagreb (Dobanovci, Surčin, Šimanovci, Pećinci). Dolazimo i dalje – do Novog Sada, Rume, granice i po celoj Srbiji.',
         ],
       },
     ],

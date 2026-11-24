@@ -26,6 +26,6 @@ export const pitanjaOpsta: Pitanje[] = [
   },
   {
     pitanje: 'Da li dolazite i na autoput?',
-    odgovor: 'Da. Na autoputu Beograd–Novi Sad od Beograda do Inđije, i na autoputu Beograd–Zagreb (E70) od Novog Beograda do Šimanovaca i Pećinaca.',
+    odgovor: 'Da. Dolazimo na autoput Beograd–Novi Sad i autoput Beograd–Zagreb (E70), kao i na obilaznicu oko Beograda. Najbrže stižemo kod Batajnice, Pazove, Inđije, Dobanovaca i Šimanovaca, a dolazimo i dalje – do Novog Sada, Rume, granice i po celoj Srbiji.',
   },
 ];

@@ -29,7 +29,7 @@ export const pitanjaLokacija: Record<string, Pitanje[]> = {
     { pitanje: 'Kako da vam pošaljem lokaciju?', odgovor: 'Preko Vibera ili WhatsApp-a na 063 55 85 81 – podelite trenutnu lokaciju i odmah znamo gde se nalazite.' },
   ],
   indjija: [
-    { pitanje: 'Da li dolazite na autoput kod Inđije?', odgovor: 'Da, intervenišemo na autoputu Beograd–Novi Sad, na deonici od Beograda do Inđije. Pri pozivu recite smer i najbliži izlaz.' },
+    { pitanje: 'Da li dolazite na autoput kod Inđije?', odgovor: 'Da, intervenišemo na autoputu Beograd–Novi Sad kod Inđije, ali i dalje ka Novom Sadu. Pri pozivu recite smer i najbliži izlaz.' },
     { pitanje: 'Možete li da odvezete auto iz Inđije u Novi Sad?', odgovor: 'Da, po dogovoru vozimo vozilo do servisa u Novom Sadu, Beogradu ili bilo gde u Srbiji.' },
     { pitanje: 'Da li dolazite i u sela oko Inđije?', odgovor: 'Da, dolazimo i u okolna sela opštine Inđija. Pri pozivu nam recite tačno mesto ili pošaljite lokaciju.' },
   ],
@@ -84,7 +84,7 @@ export const pitanjaLokacija: Record<string, Pitanje[]> = {
     { pitanje: 'Gde možete da odvezete vozilo iz Pećinaca ili Šimanovaca?', odgovor: 'Do servisa u Pećincima, Šimanovcima, Pazovi, Surčinu ili Beogradu, ili do vaše adrese. Po dogovoru vozimo i dalje po Srbiji.' },
   ],
   'autoput-beograd-novi-sad': [
-    { pitanje: 'Koje deonice autoputa pokrivate?', odgovor: 'Autoput Beograd–Novi Sad od Beograda do Inđije, i autoput Beograd–Zagreb (E70) od Novog Beograda, preko Dobanovaca i Surčina, do naplatne stanice Šimanovci i izlaza za Pećince. Dolazimo i na obilaznicu oko Beograda.' },
+    { pitanje: 'Koje deonice autoputa pokrivate?', odgovor: 'Najčešće radimo na autoputu Beograd–Novi Sad od Beograda do Inđije i na autoputu Beograd–Zagreb (E70) od Novog Beograda, preko Dobanovaca i Surčina, do Šimanovaca i Pećinaca. Dolazimo i dalje – do Novog Sada, Rume i po celoj Srbiji, kao i na obilaznicu oko Beograda.' },
     { pitanje: 'Šta da kažem kada pozovem?', odgovor: 'Recite na kom ste autoputu, u kom smeru, i najbliži izlaz (npr. Batajnica, Pazova, Inđija, Dobanovci, Šimanovci) ili kilometar sa table pored puta. Najlakše je da nam pošaljete lokaciju preko Vibera ili WhatsApp-a.' },
     { pitanje: 'Gde vozite vozilo sa autoputa?', odgovor: 'Do servisa koji vi izaberete ili do vaše adrese – u Beogradu, Sremu, Novom Sadu ili dalje po Srbiji.' },
     { pitanje: 'Da li dolazite noću i vikendom?', odgovor: 'Da, na autoput izlazimo 0–24h, svakog dana.' },
