@@ -1,4 +1,6 @@
 // Svaka lokacija ima svoj, poseban tekst – ne kopirati isti tekst sa drugim imenom mesta.
+import type { SlikaKljuc } from './slike';
+
 export type Lokacija = {
   slug: string;
   mesto: string; // nominativ: "Stari Banovci"
@@ -8,6 +10,7 @@ export type Lokacija = {
   tekst: string[];
   okolina: string[];
   grupa: 'Srem' | 'Beograd' | 'Autoput';
+  slika?: SlikaKljuc; // slika sa stvarne intervencije u tom mestu
 };
 
 export const lokacije: Lokacija[] = [
@@ -24,6 +27,7 @@ export const lokacije: Lokacija[] = [
     ],
     okolina: ['Novi Banovci', 'Nova Pazova', 'Belegiš', 'Batajnica'],
     grupa: 'Srem',
+    slika: 'posejdon',
   },
   {
     slug: 'novi-banovci',
@@ -66,6 +70,7 @@ export const lokacije: Lokacija[] = [
     ],
     okolina: ['Stara Pazova', 'Stari Banovci', 'Novi Banovci', 'Batajnica'],
     grupa: 'Srem',
+    slika: 'zemunMetro',
   },
   {
     slug: 'stara-pazova',
@@ -80,6 +85,7 @@ export const lokacije: Lokacija[] = [
     ],
     okolina: ['Nova Pazova', 'Inđija', 'Stari Banovci', 'Belegiš'],
     grupa: 'Srem',
+    slika: 'pazovaUtovar',
   },
   {
     slug: 'indjija',
@@ -95,6 +101,7 @@ export const lokacije: Lokacija[] = [
     ],
     okolina: ['Stara Pazova', 'Slankamen', 'Surduk'],
     grupa: 'Srem',
+    slika: 'kanal',
   },
   {
     slug: 'belegis-surduk-slankamen',
@@ -123,6 +130,7 @@ export const lokacije: Lokacija[] = [
     ],
     okolina: ['Novi Beograd', 'Batajnica', 'Beograd'],
     grupa: 'Beograd',
+    slika: 'zemunPrvomajska',
   },
   {
     slug: 'novi-beograd',
@@ -137,6 +145,7 @@ export const lokacije: Lokacija[] = [
     ],
     okolina: ['Zemun', 'Beograd', 'Batajnica'],
     grupa: 'Beograd',
+    slika: 'nbg',
   },
   {
     slug: 'beograd',
@@ -151,6 +160,7 @@ export const lokacije: Lokacija[] = [
     ],
     okolina: ['Zemun', 'Novi Beograd', 'Batajnica'],
     grupa: 'Beograd',
+    slika: 'nbgUtovar',
   },
   {
     slug: 'zemun-polje',
@@ -179,6 +189,7 @@ export const lokacije: Lokacija[] = [
     ],
     okolina: ['Batajnica', 'Zemun Polje', 'Dobanovci', 'Nova Pazova'],
     grupa: 'Beograd',
+    slika: 'kombiUgrinovci',
   },
   {
     slug: 'surcin',
@@ -250,6 +261,7 @@ export const lokacije: Lokacija[] = [
     ],
     okolina: ['Batajnica', 'Nova Pazova', 'Inđija', 'Dobanovci', 'Pećinci i Šimanovci'],
     grupa: 'Autoput',
+    slika: 'madjarska',
   },
 ];
 

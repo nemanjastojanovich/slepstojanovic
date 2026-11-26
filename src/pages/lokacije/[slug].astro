@@ -7,6 +7,8 @@ import { lokacije, nadjiLokaciju, type Lokacija } from '../../data/lokacije';
 import { usluge } from '../../data/usluge';
 import { schemaFirma, schemaUsluga, schemaPitanja } from '../../data/schema';
 import { pitanjaLokacija } from '../../data/pitanjaLokacija';
+import { slike } from '../../data/slike';
+import { Image } from 'astro:assets';
 
 export function getStaticPaths() {
   return lokacije.map((l) => ({ params: { slug: l.slug }, props: { lokacija: l } }));
@@ -23,6 +25,7 @@ const okolina = lokacija.okolina
   .map((m) => nadjiLokaciju(m))
   .filter((l): l is Lokacija => Boolean(l) && l?.slug !== lokacija.slug);
 const pitanja = pitanjaLokacija[lokacija.slug] ?? [];
+const slika = lokacija.slika ? slike[lokacija.slika] : undefined;
 const url = new URL(`/lokacije/${lokacija.slug}`, Astro.site ?? 'https://slepstojanovic.rs').href;
 const sheme: object[] = [
   schemaFirma(),
@@ -48,6 +51,15 @@ const mrvice = [
       <div>
         <h2>{naAutoputu ? 'Kvar na autoputu?' : `Šlep ${lokacija.uMestu}`}</h2>
         {lokacija.tekst.map((t) => <p>{t}</p>)}
+
+        {
+          slika && (
+            <figure class="sa-terena">
+              <Image src={slika.src} alt={slika.alt} widths={[400, 800]} sizes="(min-width: 860px) 560px, 100vw" class="zaobljena" />
+              {slika.opis && <figcaption>{slika.opis}</figcaption>}
+            </figure>
+          )
+        }
 
         <h2>Usluge {lokacija.uMestu}</h2>
         <ul class="lista-tacke">
@@ -76,3 +88,18 @@ const mrvice = [
 
   <CtaTraka naslov={`Treba vam šlep ${lokacija.uMestu}?`} />
 </Osnovni>
+
+<style>
+  .sa-terena {
+    margin: 24px 0 8px;
+  }
+  .sa-terena :global(img) {
+    width: 100%;
+    height: auto;
+  }
+  .sa-terena figcaption {
+    margin-top: 8px;
+    font-size: 0.92rem;
+    color: var(--siva-tekst);
+  }
+</style>
