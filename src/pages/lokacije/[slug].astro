@@ -25,7 +25,7 @@ const okolina = lokacija.okolina
   .map((m) => nadjiLokaciju(m))
   .filter((l): l is Lokacija => Boolean(l) && l?.slug !== lokacija.slug);
 const pitanja = pitanjaLokacija[lokacija.slug] ?? [];
-const slika = lokacija.slika ? slike[lokacija.slika] : undefined;
+const slikeMesta = (lokacija.slike ?? []).map((k) => slike[k]);
 const url = new URL(`/lokacije/${lokacija.slug}`, Astro.site ?? 'https://slepstojanovic.rs').href;
 const sheme: object[] = [
   schemaFirma(),
@@ -53,11 +53,15 @@ const mrvice = [
         {lokacija.tekst.map((t) => <p>{t}</p>)}
 
         {
-          slika && (
-            <figure class="sa-terena">
-              <Image src={slika.src} alt={slika.alt} widths={[400, 800]} sizes="(min-width: 860px) 560px, 100vw" class="zaobljena" />
-              {slika.opis && <figcaption>{slika.opis}</figcaption>}
-            </figure>
+          slikeMesta.length > 0 && (
+            <div class:list={['sa-terena', { dve: slikeMesta.length > 1 }]}>
+              {slikeMesta.map((sl) => (
+                <figure>
+                  <Image src={sl.src} alt={sl.alt} widths={[400, 800]} sizes="(min-width: 860px) 560px, 100vw" class="zaobljena" />
+                  {sl.opis && <figcaption>{sl.opis}</figcaption>}
+                </figure>
+              ))}
+            </div>
           )
         }
 
@@ -92,6 +96,11 @@ const mrvice = [
 <style>
   .sa-terena {
     margin: 24px 0 8px;
+    display: grid;
+    gap: 20px;
+  }
+  .sa-terena figure {
+    margin: 0;
   }
   .sa-terena :global(img) {
     width: 100%;

@@ -51,7 +51,7 @@ export const slike = {
   noviPazarPrevoz: {
     src: noviPazarPrevoz,
     alt: 'Međugradski prevoz vozila na relaciji Beograd – Novi Pazar, Šlep Stojanović',
-    opis: 'Međugradski prevoz vozila: Beograd – Novi Pazar.',
+    opis: 'Kod Stare Pazove → Novi Pazar: međugradski prevoz automobila.',
   },
   noviPazarIstovar: {
     src: noviPazarIstovar,
