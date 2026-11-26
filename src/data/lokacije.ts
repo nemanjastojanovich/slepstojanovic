@@ -70,7 +70,7 @@ export const lokacije: Lokacija[] = [
     ],
     okolina: ['Stara Pazova', 'Stari Banovci', 'Novi Banovci', 'Batajnica'],
     grupa: 'Srem',
-    slike: ['zemunMetro'],
+    slike: ['novaPazovaIstovar'],
   },
   {
     slug: 'stara-pazova',
@@ -130,7 +130,7 @@ export const lokacije: Lokacija[] = [
     ],
     okolina: ['Novi Beograd', 'Batajnica', 'Beograd'],
     grupa: 'Beograd',
-    slike: ['zemunPrvomajska'],
+    slike: ['zemunPrvomajska', 'kombiIkarbus'],
   },
   {
     slug: 'novi-beograd',
@@ -175,6 +175,7 @@ export const lokacije: Lokacija[] = [
     ],
     okolina: ['Batajnica', 'Zemun', 'Ugrinovci', 'Novi Beograd'],
     grupa: 'Beograd',
+    slike: ['zemunMetro'],
   },
   {
     slug: 'ugrinovci',

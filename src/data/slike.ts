@@ -18,6 +18,8 @@ import madjarska from '../assets/slike/slep-stojanovic-madjarska-zemun.jpg';
 import zemunMetro from '../assets/slike/slep-stojanovic-zemun-metro-nova-pazova.jpg';
 import zemunPrvomajska from '../assets/slike/slep-stojanovic-zemun-prvomajska-obrenovac.jpg';
 import posejdon from '../assets/slike/slep-stojanovic-stari-banovci-posejdon.jpg';
+import kombiIkarbus from '../assets/slike/slep-stojanovic-zemun-ikarbus-kombi.jpg';
+import novaPazovaIstovar from '../assets/slike/slep-stojanovic-nova-pazova-istovar.jpg';
 import logo from '../assets/slike/logo-slep-stojanovic.jpg';
 
 type Slika = { src: ImageMetadata; alt: string; opis?: string };
@@ -102,6 +104,16 @@ export const slike = {
     src: posejdon,
     alt: 'Šlepanje automobila od SRC Posejdon u Starim Banovcima do mehaničara u Novim Banovcima – Šlep Stojanović',
     opis: 'Stari Banovci, kod SRC „Posejdon“ → mehaničar u Novim Banovcima.',
+  },
+  kombiIkarbus: {
+    src: kombiIkarbus,
+    alt: 'Utovar pokvarenog kombija kod isključenja sa autoputa kod Ikarbusa u Zemunu – Šlep Stojanović',
+    opis: 'Zemun, isključenje sa autoputa kod Ikarbusa: utovar kombija u kvaru.',
+  },
+  novaPazovaIstovar: {
+    src: novaPazovaIstovar,
+    alt: 'Istovar automobila ispred kuće vlasnika u Novoj Pazovi – Šlep Stojanović',
+    opis: 'Nova Pazova: istovar automobila dovezenog sa parkinga Metroa u Zemunu.',
   },
 } satisfies Record<string, Slika>;
 
