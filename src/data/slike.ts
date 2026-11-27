@@ -20,6 +20,7 @@ import zemunPrvomajska from '../assets/slike/slep-stojanovic-zemun-prvomajska-ob
 import posejdon from '../assets/slike/slep-stojanovic-stari-banovci-posejdon.jpg';
 import kombiIkarbus from '../assets/slike/slep-stojanovic-zemun-ikarbus-kombi.jpg';
 import novaPazovaIstovar from '../assets/slike/slep-stojanovic-nova-pazova-istovar.jpg';
+import plaviHorizonti from '../assets/slike/slep-stojanovic-zemun-polje-plavi-horizonti.jpg';
 import logo from '../assets/slike/logo-slep-stojanovic.jpg';
 
 type Slika = { src: ImageMetadata; alt: string; opis?: string };
@@ -114,6 +115,11 @@ export const slike = {
     src: novaPazovaIstovar,
     alt: 'Istovar automobila ispred kuće vlasnika u Novoj Pazovi – Šlep Stojanović',
     opis: 'Nova Pazova: istovar automobila dovezenog sa parkinga Metroa u Zemunu.',
+  },
+  plaviHorizonti: {
+    src: plaviHorizonti,
+    alt: 'Noćno šlepanje automobila u kvaru iz naselja Plavi horizonti u Zemun Polju – Šlep Stojanović',
+    opis: 'Zemun Polje, naselje Plavi horizonti: noćni utovar automobila u kvaru.',
   },
 } satisfies Record<string, Slika>;
 

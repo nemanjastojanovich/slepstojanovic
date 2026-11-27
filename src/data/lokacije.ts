@@ -175,7 +175,7 @@ export const lokacije: Lokacija[] = [
     ],
     okolina: ['Batajnica', 'Zemun', 'Ugrinovci', 'Novi Beograd'],
     grupa: 'Beograd',
-    slike: ['zemunMetro'],
+    slike: ['plaviHorizonti', 'zemunMetro'],
   },
   {
     slug: 'ugrinovci',
