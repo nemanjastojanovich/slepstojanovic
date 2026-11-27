@@ -25,7 +25,8 @@ const okolina = lokacija.okolina
   .map((m) => nadjiLokaciju(m))
   .filter((l): l is Lokacija => Boolean(l) && l?.slug !== lokacija.slug);
 const pitanja = pitanjaLokacija[lokacija.slug] ?? [];
-const slikeMesta = (lokacija.slike ?? []).map((k) => slike[k]);
+// Najviše 2 slike po lokaciji – prva je najnovija.
+const slikeMesta = (lokacija.slike ?? []).slice(0, 2).map((k) => slike[k]);
 const url = new URL(`/lokacije/${lokacija.slug}`, Astro.site ?? 'https://slepstojanovic.rs').href;
 const sheme: object[] = [
   schemaFirma(),
