@@ -1,7 +1,7 @@
 // Svi podaci o firmi na jednom mestu. Menjaš ovde -> menja se na celom sajtu.
 export const firma = {
   ime: 'Šlep Stojanović',
-  podnaslov: 'Stari Banovci',
+  podnaslov: 'Beograd i Srem',
   poslovnoIme: 'NEMANJA STOJANOVIĆ PR ŠLEP SLUŽBA ŠLEP STOJANOVIĆ STARI BANOVCI',
   telefon: '063 55 85 81',
   telefonLink: 'tel:+38163558581',
